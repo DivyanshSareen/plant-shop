@@ -3,7 +3,7 @@
 /* hero section */
 .hero{
     height: 28rem;
-    /* background-image: url("./resources/hero-img.jpg"); */
+    background-image: url("../assests/hero-img.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
