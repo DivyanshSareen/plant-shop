@@ -2,12 +2,10 @@ export default function Nav(){
     return(<>
         <nav>
         <div class="nav-wrapper">
-            <a href="./index.html">
                 <div class="nav-logo">
                     <i class="fa-solid fa-store">
                     </i> Ecom Store
                 </div>
-            </a>
             <div class="nav-list">
                 <div class="nav-item input search">
                     <label for="search"><i class="fa-solid fa-magnifying-glass"></i>  </label>
