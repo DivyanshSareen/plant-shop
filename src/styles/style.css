@@ -22,7 +22,6 @@
 }
 
 /* category grid */
-
 .category-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -47,9 +46,6 @@
 .card > .card-head{
     color: var(--secondary);
 }
-
-/* category card */
-
 
 /* overriding btn component */
 .btn{
@@ -99,9 +95,8 @@
 }
 
 /* overriding badge */
-
 .badge{
-    margin:0;
+    margin:2px;
 }
 
 .icon-badge > i{
