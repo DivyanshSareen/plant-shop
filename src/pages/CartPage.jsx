@@ -7,14 +7,14 @@ export default function CartPage(){
     return(
         <>
             <Nav/>
-            <h5 class="h6 center-text cart-head">MY CART(3)</h5>
-            <div class="cart">
-                <div class="products">
+            <h5 className="h6 center-text cart-head">MY CART(3)</h5>
+            <div className="cart">
+                <div className="products">
                     <ProductDetail/>
                     <ProductDetail/>
                     <ProductDetail/>
                 </div>
-                <div class="bill">
+                <div className="bill">
                     <BillingDetail/>
                 </div>
             </div>
