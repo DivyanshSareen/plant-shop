@@ -7,7 +7,7 @@ export default function ProductList(){
     return(
         <>
             <Nav />
-            <section class="content">
+            <section className="content">
                 <Filters />
                 <ProductGrid />
             </section>
