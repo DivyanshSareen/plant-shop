@@ -2,24 +2,24 @@ import "../styles/login.css";
 
 export default function SignupForm(){
     return(
-        <section class="login-area">
+        <section className="login-area">
         <form action="">
-            <h5 class="h5 center-text login-head">Signup</h5>
-            <div class="input">
-                <label for="email" class="input-label">Email address</label>
-                <input type="email" class="input-data" placeholder="example@gmail.com" required></input>
+            <h5 className="h5 center-text login-head">Signup</h5>Name
+            <div className="input">
+                <label for="email" className="input-label">Email address</label>
+                <input type="email" className="input-data" placeholder="example@gmail.com" required></input>
             </div>
-            <div class="input">
+            <div className="input">
                 <label for="password" class="input-label">Password</label>
-                <input type="password" id="password" class="input-data" placeholder="********" required></input>
+                <input type="password" id="password" className="input-data" placeholder="********" required></input>
             </div>
-            <div class="input terms">
-                <input type="checkbox" class="input-data" id="terms"></input>
+            <div className="input terms">
+                <input type="checkbox" className="input-data" id="terms"></input>
                 <label for="terms">I accept all Terms & Conditions</label>
             </div>
-            <div class="btn btn-login center-text">Create Account</div>
+            <div className="btn btn-login center-text">Create Account</div>
             <a href="./login.html">
-                <div class="paragraph1 center-text">Already have an account <i class="fa-solid fa-chevron-right"></i>
+                <div className="paragraph1 center-text">Already have an account <i className="fa-solid fa-chevron-right"></i>
                 </div>
             </a>
         </form>
