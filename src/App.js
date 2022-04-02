@@ -2,8 +2,8 @@ import SignupPage from "./pages/SignupPage";
 
 function App() {
   return (
-    <div className="App">
-      <SignupPage/>
+    <div className='App'>
+      <SignupPage />
     </div>
   );
 }

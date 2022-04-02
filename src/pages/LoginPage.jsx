@@ -1,12 +1,13 @@
 import Nav from "../components/Nav";
 import LoginForm from "../components/LoginForm";
 
-export default function LoginPage(){
-    return (<>
-        <Nav/>
-        <section className="login-area">
-        <LoginForm/>
-    </section>
+export default function LoginPage() {
+  return (
+    <>
+      <Nav />
+      <section className='login-area'>
+        <LoginForm />
+      </section>
     </>
-    );
+  );
 }
