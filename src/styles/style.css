@@ -1,9 +1,15 @@
 @import url("https://peaceui.netlify.app/peace.css");
 
+:root{
+    --primary: #24AF01;
+    --primary-100: #57B86A;
+    --white: #FFFFFF;
+}
+
 /* hero section */
 .hero{
     height: 28rem;
-    background-image: url("../assests/hero-img.jpg");
+    background-image: url("https://images.pexels.com/photos/113335/pexels-photo-113335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
@@ -31,7 +37,7 @@
 }
 
 .card{
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .card > .card-option{
@@ -44,7 +50,7 @@
 }
 
 .card > .card-head{
-    color: var(--secondary);
+    color: var(--primary);
 }
 
 /* overriding btn component */
@@ -56,9 +62,13 @@
     height: 100%;
 }
 
+.btn-ghost{
+    color: var(--white);
+}
+
 .btn-ghost:hover{
-    color: var(--primary-100);
-    border: 2px solid var(--primary-100);
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 
 .btn-ghost:active{

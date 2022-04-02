@@ -1,4 +1,4 @@
-import category from "../assests/category3.jpeg";
+import category from "../assests/category1.jpeg";
 
 export default function CategoryCard() {
   return (
