@@ -3,8 +3,8 @@ import CategoryCard from "./CategoryCard";
 export default function CategoryGrid() {
   return (
     <>
-      <section class='category'>
-        <div class='category-grid'>
+      <section className='category'>
+        <div className='category-grid'>
           <CategoryCard />
           <CategoryCard />
           <CategoryCard />
