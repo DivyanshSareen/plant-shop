@@ -1,5 +1,3 @@
-@import url("https://peaceui.netlify.app/peace.css");
-
 /* initial layout */
 .content{
     display: flex;
@@ -8,74 +6,9 @@
 /* product display */
 .product-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     padding: 3em;
     gap: 2em;
-}
-
-/* product card */
-.card > .card-option{
-    padding: 1em;
-}
-
-.card > .card-option{
-    margin: 0;
-}
-
-.card > .card-option > .btn{
-    width: 100%;
-}
-
-/* overriding btn component */
-.btn{
-    margin: 0;
-}
-
-.btn-ghost:hover{
-    color: var(--primary-100);
-    border: 2px solid var(--primary-100);
-}
-
-.btn-ghost:active{
-    color: var(--primary);
-}
-
-/* overriding navbar */
-.nav-wrapper{
-    top: 0;
-    width: 100%;
-}
-
-.nav-list{
-    /* reduced column-gap from 3em to 1em */
-    column-gap: 1em;
-    margin-right: 0;
-}
-
-/* overriding input */
-.search{
-    margin:0;
-    padding: 0;
-    height: 1rem;
-    display: block;
-    cursor: pointer;
-}
-
-.input-data{
-    border: 2px solid var(--background-grey);
-}
-
-.input-data:hover{
-    border: 2px solid var(--primary);
-}
-
-/* overriding badge */
-.badge{
-    margin:0;
-}
-
-.icon-badge > i{
-    font-size: 1.8em;
 }
 
 /* filter section */
@@ -109,4 +42,11 @@
 
 .inline-input{
     display: inline-block;
+}
+
+.filter > form{
+    margin: 0;
+    padding: 1em;
+    width: 100%;
+    box-shadow: none;
 }

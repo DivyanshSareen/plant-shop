@@ -9,8 +9,6 @@ export default function ProductGrid() {
         <ProductCard />
         <ProductCard />
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
       </div>
     </main>
   );

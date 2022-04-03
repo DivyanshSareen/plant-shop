@@ -1,0 +1,46 @@
+/* hero section */
+.hero {
+    height: 28rem;
+    background-image: url("https://images.pexels.com/photos/113335/pexels-photo-113335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    margin: 8rem 3rem 3rem 3rem;
+    border-radius: var(--radius-m);
+}
+
+.hero-title {
+    color: var(--primary);
+}
+
+.hero-subtitle {
+    color: var(--background-grey);
+    padding-left: 1em;
+}
+
+/* category grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 3em;
+    margin: 2em;
+}
+
+.card {
+    background-color: var(--primary);
+}
+
+.card>.card-option {
+    margin: 0;
+    padding: 1em;
+}
+
+.card>.card-option>.btn {
+    width: 100%;
+}
+
+.card>.card-head {
+    color: var(--primary);
+}

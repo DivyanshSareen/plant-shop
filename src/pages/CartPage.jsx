@@ -14,9 +14,8 @@ export default function CartPage() {
           <ProductDetail />
           <ProductDetail />
         </div>
-        <div className='bill'>
-          <BillingDetail />
-        </div>
+
+        <BillingDetail />
       </div>
     </>
   );

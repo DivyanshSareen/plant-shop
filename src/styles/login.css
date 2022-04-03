@@ -1,69 +1,15 @@
-@import url("https://peaceui.netlify.app/peace.css");
-
-/* overriding btn component */
-.btn{
-    margin: 0;
-}
-
-.btn-ghost:hover{
-    color: var(--primary-100);
-    border: 2px solid var(--primary-100);
-}
-
-.btn-ghost:active{
-    color: var(--primary);
-}
-
-/* overriding navbar */
-.nav-wrapper{
-    top: 0;
-    width: 100%;
-}
-
-.nav-list{
-    /* reduced column-gap from 3em to 1em */
-    column-gap: 1em;
-    margin-right: 0;
-}
-
-/* overriding input */
-.search{
-    margin:0;
-    padding: 0;
-    height: 1rem;
-    display: block;
-    cursor: pointer;
-}
-
-.input-data{
-    border: 2px solid var(--background-grey);
-}
-
-.input-data:hover{
-    border: 2px solid var(--primary);
-}
-
-/* overriding badge */
-.badge{
-    margin:0;
-}
-
-.icon-badge > i{
-    font-size: 1.8em;
-}
-
 /* login section */
 
 .login-area{
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 form{
-    padding: 3em;
+    padding: 2em 3em 3em 3em;
     box-shadow: var(--card-shadow);
     margin: 2em;
+    width: 40vw;
 }
 
 .login-head{
@@ -87,4 +33,8 @@ form{
 
 .btn-login{
     margin: 1em;
+}
+
+.terms{
+    display: inline;
 }
