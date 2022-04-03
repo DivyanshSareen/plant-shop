@@ -5,9 +5,11 @@ export default function Nav() {
     <>
       <nav>
         <div className='nav-wrapper'>
-          <div className='nav-logo h6'>
-            <i className='fa-solid fa-seedling'></i> PlantShop
-          </div>
+          <Link to='/'>
+            <div className='nav-logo h6'>
+              <i className='fa-solid fa-seedling'></i> PlantShop
+            </div>
+          </Link>
           <div className='nav-list'>
             <div className='nav-item input search'>
               <label for='search'>

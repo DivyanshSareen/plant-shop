@@ -1,8 +1,9 @@
 import category from "../assests/category1.jpeg";
+import { Link } from "react-router-dom";
 
 export default function CategoryCard() {
   return (
-    <a href='./product-list.html'>
+    <Link to='listing'>
       <div className='card card-overlay'>
         <div className='card-head'>
           <div className='card-title h4'>Category</div>
@@ -15,6 +16,6 @@ export default function CategoryCard() {
           <div className='badge'>sale</div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
