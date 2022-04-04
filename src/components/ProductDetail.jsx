@@ -1,10 +1,8 @@
-import productImg from "../assests/product-img.jpg";
-
 export default function ProductDetail() {
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={productImg} alt='card' />
+        <img src={require("../assests/fruit/mango.webp")} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>

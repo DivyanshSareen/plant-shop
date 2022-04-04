@@ -28,8 +28,14 @@
     margin: 3rem
 }
 
+.card-img{
+    opacity: 90%;
+}
+
 .card>.card-head {
-    color: var(--primary-100);
+    color: var(--primary);
+    text-transform: uppercase;
+    padding: 1em;
 }
 
 .card-img > img{
