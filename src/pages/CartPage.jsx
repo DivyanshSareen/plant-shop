@@ -2,8 +2,6 @@ import BillingDetail from "../components/BillingDetail";
 import ProductDetail from "../components/ProductDetail";
 import "../styles/cart.css";
 
-import { useState, useEffect } from "react";
-
 export default function CartPage() {
   return (
     <>
