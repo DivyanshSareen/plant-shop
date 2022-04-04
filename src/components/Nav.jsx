@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+
 export default function Nav() {
   return (
     <>
       <nav>
         <div className='nav-wrapper'>
-          <div className='nav-logo h6'>
-            <i className='fa-solid fa-seedling'></i> PlantShop
-          </div>
+          <Link to='/'>
+            <div className='nav-logo h6'>
+              <i className='fa-solid fa-seedling'></i> PlantShop
+            </div>
+          </Link>
           <div className='nav-list'>
             <div className='nav-item input search'>
               <label for='search'>
@@ -17,26 +21,26 @@ export default function Nav() {
                 id='search'
                 placeholder='Search Products'></input>
             </div>
-            <a href='./login.html'>
+            <Link to='./login'>
               <button className='nav-item btn btn-ghost login-btn'>
                 <i className='fa-solid fa-arrow-right-to-bracket'></i>
                 Login
               </button>
-            </a>
-            <a href='./wishlist.html'>
+            </Link>
+            <Link to='./wishlist'>
               <div className='nav-item icon-badge btn btn-ghost'>
                 <i className='fa-regular fa-heart icon'>
                   <div className='badge-num'>6</div>
                 </i>
               </div>
-            </a>
-            <a href='./cart.html'>
-              <div class='nav-item icon-badge btn btn-ghost'>
-                <i class='fa-solid fa-cart-shopping icon'>
-                  <div class='badge-num'>6</div>
+            </Link>
+            <Link to='./cart'>
+              <div className='nav-item icon-badge btn btn-ghost'>
+                <i className='fa-solid fa-cart-shopping icon'>
+                  <div className='badge-num'>6</div>
                 </i>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

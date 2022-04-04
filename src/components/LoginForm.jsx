@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function LoginForm() {
   return (
     <form action=''>
@@ -31,11 +33,11 @@ export default function LoginForm() {
         <div className='paragraph2 forgot-password'>Forgot your Password?</div>
       </div>
       <div className='btn btn-login center-text'>Login</div>
-      <a href='./register.html'>
+      <Link to='/signup'>
         <div className='paragraph1 center-text'>
           Create New Account <i className='fa-solid fa-chevron-right'></i>
         </div>
-      </a>
+      </Link>
     </form>
   );
 }
