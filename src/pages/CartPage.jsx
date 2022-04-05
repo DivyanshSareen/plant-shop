@@ -1,5 +1,5 @@
 import BillingDetail from "../components/BillingDetail";
-import ProductDetail from "../components/ProductDetail";
+import CartGrid from "../components/CartGrid";
 import "../styles/cart.css";
 
 export default function CartPage() {
@@ -7,12 +7,7 @@ export default function CartPage() {
     <>
       <h4 className='h4 center-text cart-head'>My Cart</h4>
       <div className='cart'>
-        <div className='products'>
-          <ProductDetail />
-          <ProductDetail />
-          <ProductDetail />
-        </div>
-
+        <CartGrid />
         <BillingDetail />
       </div>
     </>

@@ -1,5 +1,7 @@
+import { useCart } from "../context/cart-context";
+
 export default function ProductCard({ product }) {
-  console.log(product.image);
+  const { addToCart } = useCart();
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
@@ -9,12 +11,15 @@ export default function ProductCard({ product }) {
         <div className='card-head'>
           <div className='card-title h5'>{product.name}</div>
           <div className='card-subtitle h4'>
-            <ins>Rs. 2000</ins> <del>Rs. 3000</del>
+            <ins>Rs. {product.price - product.discount_amt}</ins>{" "}
+            <del>Rs. {product.price}</del>
           </div>
-          <div className='offer'>50% off</div>
+          <div className='offer'>{product.discount} off</div>
         </div>
         <div className='card-option'>
-          <button className='btn'>Add to Cart</button>
+          <button className='btn' onClick={() => addToCart(product)}>
+            Add to Cart
+          </button>
           <button className='btn'>Move to WishList</button>
         </div>
       </div>
