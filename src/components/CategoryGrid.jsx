@@ -1,31 +1,15 @@
 import CategoryCard from "./CategoryCard";
-import { categories } from "../data/cat";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useCategory } from "../context/category-context";
 
 export default function CategoryGrid() {
-  const [category, setCategory] = useState({});
+  const { categories } = useCategory();
 
-  useEffect(() => {
-    getCategories();
-  }, []);
-
-  async function getCategories() {
-    try {
-      const response = await axios.get("/api/categories");
-      setCategory(response.data.categories);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  console.log(categories);
   return (
     <>
       <section className='category'>
         <div className='category-grid'>
-          {category.map((cat) => (
+          {categories.map((cat) => (
             <CategoryCard key={cat._id} category={cat} />
           ))}
         </div>

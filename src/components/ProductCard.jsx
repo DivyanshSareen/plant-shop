@@ -1,12 +1,13 @@
-export default function ProductCard() {
+export default function ProductCard({ product }) {
+  console.log(product.image);
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require("../assests/fruit/mango.webp")} alt='card' />
+        <img src={require(`../assests${product.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>
-          <div className='card-title h5'>Gift Box</div>
+          <div className='card-title h5'>{product.name}</div>
           <div className='card-subtitle h4'>
             <ins>Rs. 2000</ins> <del>Rs. 3000</del>
           </div>

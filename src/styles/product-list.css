@@ -11,6 +11,11 @@
     gap: 2em;
 }
 
+/* product card */
+.card-title{
+    text-transform: capitalize;
+}
+
 /* filter section */
 .filter{
     width: 18em;

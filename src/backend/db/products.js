@@ -17,9 +17,9 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "daisy",
+    name: "petunia",
     categoryName: "perennial",
-    image: "/perennial/daisy.webp",
+    image: "/perennial/petunia.webp",
     price: "100",
     discount: "10",
     discount_amt: "10",
@@ -125,9 +125,9 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "sungonium",
+    name: "syngonium",
     categoryName: "indoor",
-    image: "/indoor/sungonium.webp",
+    image: "/indoor/syngonium.webp",
     price: "150",
     discount: "10",
     discount_amt: "15",
