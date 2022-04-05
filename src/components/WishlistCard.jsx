@@ -1,18 +1,18 @@
-import productImg from "../assests/product-img.jpg";
-
-export default function WishlistCard() {
+export default function WishlistCard({ wishProduct }) {
+  console.log(wishProduct);
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={productImg} alt='card' />
+        <img src={require(`../assests${wishProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>
-          <div className='card-title h5'>Gift Box</div>
+          <div className='card-title h5'>{wishProduct.name}</div>
           <div className='card-subtitle h4'>
-            <ins>Rs. 2000</ins> <del>Rs. 3000</del>
+            <ins>Rs. {wishProduct.price - wishProduct.discount_amt}</ins>{" "}
+            <del>Rs. {wishProduct.price}</del>
           </div>
-          <div className='offer'>50% off</div>
+          <div className='offer'>{wishProduct.discount_amt}% off</div>
         </div>
         <div className='card-option'>
           <button className='btn'>Move to Cart</button>

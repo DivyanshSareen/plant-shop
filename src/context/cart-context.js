@@ -22,11 +22,16 @@ export function CartProvider({ children }) {
       discount_amt: "40",
     },
   ]);
+  const [noItemsCart, setNoItemsCart] = useState(cart.length);
 
+  //sample addToCart, will send data to api soon
   function addToCart(productDetail) {
     setCart((cart) => [...cart, productDetail]);
+    setNoItemsCart((noItemsCart) => noItemsCart + 1);
     console.log("nnew cart:", cart);
   }
+
+  // calculate bill through reducer
 
   return (
     <CartContext.Provider
@@ -34,6 +39,8 @@ export function CartProvider({ children }) {
         cart,
         setCart,
         addToCart,
+        noItemsCart,
+        setNoItemsCart,
       }}>
       {children}
     </CartContext.Provider>

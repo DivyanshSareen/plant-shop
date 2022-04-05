@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../context/cart-context";
+import { useWishlist } from "../context/wishlist-context";
 
 export default function Nav() {
+  const { noItemsCart } = useCart();
+  const { noItemsWishlist } = useWishlist();
+
   return (
     <>
       <nav>
@@ -30,14 +35,14 @@ export default function Nav() {
             <Link to='./wishlist'>
               <div className='nav-item icon-badge btn btn-ghost'>
                 <i className='fa-regular fa-heart icon'>
-                  <div className='badge-num'>6</div>
+                  <div className='badge-num'>{noItemsWishlist}</div>
                 </i>
               </div>
             </Link>
             <Link to='./cart'>
               <div className='nav-item icon-badge btn btn-ghost'>
                 <i className='fa-solid fa-cart-shopping icon'>
-                  <div className='badge-num'>6</div>
+                  <div className='badge-num'>{noItemsCart}</div>
                 </i>
               </div>
             </Link>
