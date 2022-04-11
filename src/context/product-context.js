@@ -6,11 +6,25 @@ const ProductContext = createContext();
 
 const products = [];
 const noProducts = 0;
+const categories = [
+  { name: "perennial", isChecked: true },
+  { name: "palm", isChecked: true },
+  { name: "indoor", isChecked: true },
+  { name: "fruit", isChecked: true },
+];
+const rating = [
+  { stars: 4, isChecked: false },
+  { stars: 3, isChecked: false },
+  { stars: 2, isChecked: false },
+  { stars: 1, isChecked: true },
+];
 
 export function ProductProvider({ children }) {
   const [productState, productDispatch] = useReducer(productReducer, {
     products,
     noProducts,
+    categories,
+    rating,
   });
 
   async function getProducts() {
