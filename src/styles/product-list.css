@@ -55,3 +55,7 @@
     width: 100%;
     box-shadow: none;
 }
+
+.badge > i{
+    color: var(--white);
+}

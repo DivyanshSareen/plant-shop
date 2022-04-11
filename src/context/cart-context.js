@@ -1,46 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
+import { cartReducer } from "../reducer/cart-reducer";
+
 const CartContext = createContext();
 
-export function CartProvider({ children }) {
-  const [cart, setCart] = useState([
-    {
-      _id: 1818,
-      name: "mango",
-      categoryName: "fruit",
-      image: "/fruit/mango.webp",
-      price: "400",
-      discount: "10",
-      discount_amt: "40",
-    },
-    {
-      _id: 1919,
-      name: "orange",
-      categoryName: "fruit",
-      image: "/fruit/orange.webp",
-      price: "400",
-      discount: "10",
-      discount_amt: "40",
-    },
-  ]);
-  const [noItemsCart, setNoItemsCart] = useState(cart.length);
+const cart = [];
+const noItemsCart = cart.length;
 
-  //sample addToCart, will send data to api soon
-  function addToCart(productDetail) {
-    setCart((cart) => [...cart, productDetail]);
-    setNoItemsCart((noItemsCart) => noItemsCart + 1);
-    console.log("nnew cart:", cart);
-  }
+const bill = { total: 0, discount: 0, deliveryCharge: 75 };
+
+export function CartProvider({ children }) {
+  const [cartState, cartDispatch] = useReducer(cartReducer, {
+    cart,
+    noItemsCart,
+    bill,
+  });
 
   // calculate bill through reducer
 
   return (
     <CartContext.Provider
       value={{
-        cart,
-        setCart,
-        addToCart,
-        noItemsCart,
-        setNoItemsCart,
+        cartState,
+        cartDispatch,
       }}>
       {children}
     </CartContext.Provider>

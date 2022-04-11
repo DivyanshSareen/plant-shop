@@ -1,10 +1,17 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
+import productReducer from "../reducer/product-reducer";
 import axios from "axios";
 
 const ProductContext = createContext();
 
+const products = [];
+const noProducts = 0;
+
 export function ProductProvider({ children }) {
-  const [products, setProducts] = useState([]);
+  const [productState, productDispatch] = useReducer(productReducer, {
+    products,
+    noProducts,
+  });
 
   async function getProducts() {
     let response = [];
@@ -13,7 +20,10 @@ export function ProductProvider({ children }) {
     } catch (error) {
       console.log(error);
     } finally {
-      setProducts(response.data.products);
+      productDispatch({
+        type: "ADD_PRODUCTS",
+        payload: response.data.products,
+      });
     }
   }
 
@@ -22,7 +32,7 @@ export function ProductProvider({ children }) {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products, setProducts, getProducts }}>
+    <ProductContext.Provider value={{ productState, productDispatch }}>
       {children}
     </ProductContext.Provider>
   );
