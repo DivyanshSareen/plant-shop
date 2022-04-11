@@ -1,72 +1,74 @@
 export default function Filters() {
   return (
     <aside>
-      <div class='filter'>
-        <div class='filter-and-clear'>
+      <div className='filter'>
+        <div className='filter-and-clear'>
           <div>Filters</div>
           <div>
             <u>Clear</u>
           </div>
         </div>
         <form action=''>
-          <div class='input price'>
-            <label class='input-label' for='price'>
+          <div className='input price'>
+            <label className='input-label' htmlFor='price'>
               Price
             </label>
             <input
-              class='input-data'
+              className='input-data'
               type='range'
               id='price'
               name='price'
               min='0'
-              max='100'></input>
-            <div class='price-values'>
+              value={100}
+              max='500'></input>
+            <div className='price-values'>
               <div>0</div>
-              <div>50</div>
-              <div>100</div>
+              <div>250</div>
+              <div>500</div>
             </div>
           </div>
-          <p class='filter-heading'>Category</p>
-          <div class='input inline-input'>
-            <input
-              type='checkbox'
-              id='men-clothing'
-              name='men-clothing'
-              checked></input>
-            <label for='men-clothing'>Men Clothing</label>
+          <p className='filter-heading'>Category</p>
+          <div className='input inline-input'>
+            <input type='checkbox' id='perennial' name='perennial'></input>
+            <label htmlFor='perennial'>Perennial</label>
           </div>
-          <div class='input inline-input'>
-            <input
-              type='checkbox'
-              id='men-clothing'
-              name='men-clothing'></input>
-            <label for='men-clothing'>Men Clothing</label>
+          <div className='input inline-input'>
+            <input type='checkbox' id='palm' name='palm'></input>
+            <label htmlFor='palm'>Palm</label>
           </div>
-          <p class='filter-heading'>Rating</p>
-          <div class='input inline-input'>
-            <input type='radio' id='4star' name='rating' checked></input>
-            <label for='men-clothing'>4 Star and above</label>
+          <div className='input inline-input'>
+            <input type='checkbox' id='indoor' name='indoor'></input>
+            <label htmlFor='indoor'>Indoor</label>
           </div>
-          <div class='input inline-input'>
-            <input type='radio' id='2star' name='rating'></input>
-            <label for='men-clothing'>2 Star and above</label>
+          <div className='input inline-input'>
+            <input type='checkbox' id='fruit' name='fruit'></input>
+            <label htmlFor='fruit'>Fruit</label>
           </div>
-          <div class='input inline-input'>
-            <input type='radio' id='2star' name='rating'></input>
-            <label for='men-clothing'>2 Star and above</label>
+          <p className='filter-heading'>Rating</p>
+          <div className='input inline-input'>
+            <input type='radio' id='aboveFour' name='aboveFour'></input>
+            <label htmlFor='aboveFour'>4 Star and above</label>
           </div>
-          <div class='input inline-input'>
-            <input type='radio' id='1star' name='rating'></input>
-            <label for='men-clothing'>1 Star and above</label>
+          <div className='input inline-input'>
+            <input type='radio' id='aboveThree' name='aboveThree'></input>
+            <label htmlFor='aboveThree'>3 Star and above</label>
           </div>
-          <p class='filter-heading'>Sort by</p>
-          <div class='input inline-input'>
-            <input type='radio' id='low-to-high' name='sort-by' checked></input>
-            <label for='men-clothing'>Price- Low to High</label>
+          <div className='input inline-input'>
+            <input type='radio' id='aboveTwo' name='aboveTwo'></input>
+            <label htmlFor='aboveTwo'>2 Star and above</label>
           </div>
-          <div class='input inline-input'>
-            <input type='radio' id='high-to-low' name='sort-by'></input>
-            <label for='men-clothing'>Price- High to Low</label>
+          <div className='input inline-input'>
+            <input type='radio' id='aboveOne' name='aboveOne'></input>
+            <label htmlFor='aboveOne'>1 Star and above</label>
+          </div>
+          <p className='filter-heading'>Sort by</p>
+          <div className='input inline-input'>
+            <input type='radio' id='low-to-high' name='low-to-high'></input>
+            <label htmlFor='low-to-high'>Price- Low to High</label>
+          </div>
+          <div className='input inline-input'>
+            <input type='radio' id='high-to-low' name='high-to-low'></input>
+            <label htmlFor='high-to-low'>Price- High to Low</label>
           </div>
         </form>
       </div>

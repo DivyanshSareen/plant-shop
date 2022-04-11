@@ -10,9 +10,9 @@ export default function ProductCard({ product }) {
       <div className='card-content'>
         <div className='card-head'>
           <div className='card-title h5'>{product.name}</div>
-          <div class='card-badge'>
-            <div class='badge'>
-              <i class='fa-solid fa-star checked'></i> {product.rating}
+          <div className='card-badge'>
+            <div className='badge'>
+              <i className='fa-solid fa-star checked'></i> {product.rating}
             </div>
           </div>
           <div className='card-subtitle h4'>
