@@ -1,33 +1,40 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
+import wishlistReducer from "../reducer/wishlist-reducer";
 
 const WishlistContext = createContext();
 
-export function WishlistProvider({ children }) {
-  const [wishlist, setWishlist] = useState([
-    {
-      _id: 66,
-      name: "areca",
-      categoryName: "palm",
-      image: "/palm/areca.webp",
-      price: "500",
-      discount: "10",
-      discount_amt: "50",
-    },
-    {
-      _id: 77,
-      name: "cycas",
-      categoryName: "palm",
-      image: "/palm/cycas.webp",
-      price: "500",
-      discount: "10",
-      discount_amt: "50",
-    },
-  ]);
+const wishlist = [
+  {
+    _id: 2121,
+    name: "litchi",
+    categoryName: "fruit",
+    image: "/fruit/litchi.webp",
+    price: 400,
+    discount: 10,
+    discount_amt: 40,
+    rating: 4,
+  },
+  {
+    _id: 1212,
+    name: "mango",
+    categoryName: "fruit",
+    image: "/fruit/mango.webp",
+    price: 400,
+    discount: 10,
+    discount_amt: 40,
+    rating: 5,
+  },
+];
 
-  const [noItemsWishlist, setNoItemsWishlist] = useState(2);
+const noItemsWishlist = wishlist.length;
+
+export function WishlistProvider({ children }) {
+  const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, {
+    wishlist,
+    noItemsWishlist,
+  });
   return (
-    <WishlistContext.Provider
-      value={{ wishlist, setWishlist, noItemsWishlist, setNoItemsWishlist }}>
+    <WishlistContext.Provider value={{ wishlistState, wishlistDispatch }}>
       {children}
     </WishlistContext.Provider>
   );
