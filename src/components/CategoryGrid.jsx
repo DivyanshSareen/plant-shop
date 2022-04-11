@@ -1,8 +1,10 @@
 import CategoryCard from "./CategoryCard";
-import { categories } from "../data/cat";
+
+import { useCategory } from "../context/category-context";
 
 export default function CategoryGrid() {
-  console.log(categories);
+  const { categories } = useCategory();
+
   return (
     <>
       <section className='category'>
