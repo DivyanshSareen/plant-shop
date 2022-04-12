@@ -18,6 +18,7 @@ const rating = [
   { stars: 2, isChecked: false },
   { stars: 1, isChecked: true },
 ];
+const filter = { range: { min: 0, max: 500 }, category: [] };
 
 export function ProductProvider({ children }) {
   const [productState, productDispatch] = useReducer(productReducer, {
@@ -25,6 +26,7 @@ export function ProductProvider({ children }) {
     noProducts,
     categories,
     rating,
+    getProducts,
   });
 
   async function getProducts() {
