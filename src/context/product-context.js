@@ -20,7 +20,6 @@ const rating = [
   { stars: 1, isChecked: true },
 ];
 const range = 500;
-const sortOrder = { ascending: false, descending: false };
 
 export function ProductProvider({ children }) {
   const [productState, productDispatch] = useReducer(productReducer, {
@@ -30,7 +29,6 @@ export function ProductProvider({ children }) {
     categories,
     rating,
     range,
-    sortOrder,
   });
 
   async function getProducts() {
@@ -58,12 +56,7 @@ export function ProductProvider({ children }) {
 
   useEffect(() => {
     filterProducts();
-  }, [
-    productState.categories,
-    productState.rating,
-    productState.sortOrder,
-    productState.range,
-  ]);
+  }, [productState.categories, productState.rating, productState.range]);
 
   return (
     <ProductContext.Provider value={{ productState, productDispatch }}>

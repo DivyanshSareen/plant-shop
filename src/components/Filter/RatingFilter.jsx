@@ -12,7 +12,7 @@ export default function RatingFilter({ rating, productDispatch }) {
               payload: rating.stars,
             });
           }}
-          defaultChecked={rating.isChecked}></input>
+          checked={rating.isChecked}></input>
         <label htmlFor={`above${rating.stars}`}>
           {rating.stars} Star and above
         </label>

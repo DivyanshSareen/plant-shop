@@ -12,7 +12,12 @@ export default function Filters() {
         <div className='filter-and-clear'>
           <div>Filters</div>
           <div>
-            <u>Clear</u>
+            <u
+              onClick={() => {
+                productDispatch({ type: "RESET_FILTERS" });
+              }}>
+              Clear
+            </u>
           </div>
         </div>
         <form action=''>
@@ -20,7 +25,10 @@ export default function Filters() {
             <label className='input-label' htmlFor='price'>
               Price
             </label>
-            <PriceFilter productDispatch={productDispatch} />
+            <PriceFilter
+              productDispatch={productDispatch}
+              productState={productState}
+            />
           </div>
           <p className='filter-heading'>Category</p>
           {productState.categories.map((cat) => (

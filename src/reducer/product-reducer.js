@@ -48,6 +48,24 @@ export default function productReducer(state, action) {
         .filter((item) => item.rating >= filteredRating)
         .filter((item) => item.price <= state.range);
       return { ...state, filteredProducts: FilteredProducts };
+    case "RESET_FILTERS":
+      return {
+        ...state,
+        categories: [
+          { name: "perennial", isChecked: true },
+          { name: "palm", isChecked: true },
+          { name: "indoor", isChecked: true },
+          { name: "fruit", isChecked: true },
+        ],
+        rating: [
+          { stars: 4, isChecked: false },
+          { stars: 3, isChecked: false },
+          { stars: 2, isChecked: false },
+          { stars: 1, isChecked: true },
+        ],
+        range: 500,
+        filteredProducts: state.products,
+      };
     default:
       return state;
   }

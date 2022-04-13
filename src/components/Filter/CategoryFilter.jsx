@@ -6,7 +6,7 @@ export default function CategoryFilter({ category, productDispatch }) {
           type='checkbox'
           id='perennial'
           name='category'
-          defaultChecked={category.isChecked}
+          checked={category.isChecked}
           onChange={(e) => {
             productDispatch({
               type: "UPDATE_CATEGORY",

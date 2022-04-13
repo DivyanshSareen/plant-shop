@@ -1,4 +1,4 @@
-export default function PriceFilter() {
+export default function PriceFilter({ productState, productDispatch }) {
   return (
     <>
       <input
@@ -7,8 +7,12 @@ export default function PriceFilter() {
         id='price'
         name='price'
         min='0'
-        defaultValue={100}
-        max='500'></input>
+        max='500'
+        value={productState.range}
+        defaultValue={500}
+        onChange={(e) => {
+          productDispatch({ type: "UPDATE_RANGE", payload: e.target.value });
+        }}></input>
       <div className='price-values'>
         <div>0</div>
         <div>250</div>
