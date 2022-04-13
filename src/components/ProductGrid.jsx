@@ -7,7 +7,7 @@ export default function ProductGrid() {
   return (
     <main>
       <div className='product-grid'>
-        {productState.products.map((pd) => (
+        {productState.filteredProducts.map((pd) => (
           <ProductCard key={pd._id} product={pd} />
         ))}
       </div>

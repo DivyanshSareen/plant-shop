@@ -1,5 +1,4 @@
 export default function SortFilter({ productDispatch }) {
-  console.log(productDispatch);
   return (
     <>
       <div className='input inline-input'>

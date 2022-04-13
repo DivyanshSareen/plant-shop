@@ -7,7 +7,7 @@ export default function PriceFilter() {
         id='price'
         name='price'
         min='0'
-        value={100}
+        defaultValue={100}
         max='500'></input>
       <div className='price-values'>
         <div>0</div>

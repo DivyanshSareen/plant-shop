@@ -5,6 +5,7 @@ import productReducer from "../reducer/product-reducer";
 const ProductContext = createContext();
 
 const products = [];
+const filteredProducts = [];
 const noProducts = 0;
 const categories = [
   { name: "perennial", isChecked: true },
@@ -18,15 +19,18 @@ const rating = [
   { stars: 2, isChecked: false },
   { stars: 1, isChecked: true },
 ];
-const filter = { range: { min: 0, max: 500 }, category: [] };
+const range = { min: 0, max: 500 };
+const sort = { ascending: false, descending: false };
 
 export function ProductProvider({ children }) {
   const [productState, productDispatch] = useReducer(productReducer, {
     products,
+    filteredProducts,
     noProducts,
     categories,
     rating,
-    getProducts,
+    range,
+    sort,
   });
 
   async function getProducts() {
@@ -43,9 +47,18 @@ export function ProductProvider({ children }) {
     }
   }
 
+  function filterProducts(categories) {
+    // console.log(categories);
+    productDispatch({ type: "APPLY_FILTERS" });
+  }
+
   useEffect(() => {
     getProducts();
   }, []);
+
+  useEffect(() => {
+    filterProducts(productState.categories);
+  }, [productState.categories]);
 
   return (
     <ProductContext.Provider value={{ productState, productDispatch }}>

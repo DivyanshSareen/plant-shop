@@ -1,12 +1,18 @@
-export default function CategoryFilter({ category }) {
+export default function CategoryFilter({ category, productDispatch }) {
   return (
     <>
       <div className='input inline-input'>
         <input
           type='checkbox'
-          id={category.name}
+          id='perennial'
           name='category'
-          defaultChecked={category.isChecked}></input>
+          defaultChecked={category.isChecked}
+          onChange={(e) => {
+            productDispatch({
+              type: "UPDATE_CATEGORY",
+              payload: { name: category.name, isChecked: e.target.checked },
+            });
+          }}></input>
         <label htmlFor={category.name}>{category.name}</label>
       </div>
     </>

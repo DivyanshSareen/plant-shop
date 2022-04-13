@@ -20,16 +20,24 @@ export default function Filters() {
             <label className='input-label' htmlFor='price'>
               Price
             </label>
-            <PriceFilter />
+            <PriceFilter productDispatch={productDispatch} />
           </div>
           <p className='filter-heading'>Category</p>
           {productState.categories.map((cat) => (
-            <CategoryFilter key={cat.name} category={cat} />
+            <CategoryFilter
+              key={cat.name}
+              category={cat}
+              productDispatch={productDispatch}
+            />
           ))}
 
           <p className='filter-heading'>Rating</p>
           {productState.rating.map((rate) => (
-            <RatingFilter key={rate.stars} rating={rate} />
+            <RatingFilter
+              key={rate.stars}
+              rating={rate}
+              productDispatch={productDispatch}
+            />
           ))}
           <p className='filter-heading'>Sort by</p>
           <SortFilter productDispatch={productDispatch} />
