@@ -8,10 +8,11 @@ export default function RatingFilter({ rating, productDispatch }) {
           name='rating'
           onChange={() => {
             productDispatch({
-              type: "FILTER_BY_RATING",
+              type: "UPDATE_RATING",
               payload: rating.stars,
             });
-          }}></input>
+          }}
+          defaultChecked={rating.isChecked}></input>
         <label htmlFor={`above${rating.stars}`}>
           {rating.stars} Star and above
         </label>

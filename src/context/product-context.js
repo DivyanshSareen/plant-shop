@@ -47,7 +47,7 @@ export function ProductProvider({ children }) {
     }
   }
 
-  function filterProducts(categories) {
+  function filterProducts() {
     // console.log(categories);
     productDispatch({ type: "APPLY_FILTERS" });
   }
@@ -57,8 +57,8 @@ export function ProductProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    filterProducts(productState.categories);
-  }, [productState.categories]);
+    filterProducts();
+  }, [productState.categories, productState.rating]);
 
   return (
     <ProductContext.Provider value={{ productState, productDispatch }}>

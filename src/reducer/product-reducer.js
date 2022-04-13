@@ -29,14 +29,26 @@ export default function productReducer(state, action) {
           cat.name === action.payload.name ? action.payload : cat
         ),
       };
+    case "UPDATE_RATING":
+      return {
+        ...state,
+        rating: state.rating.map((rate) =>
+          rate.stars === action.payload
+            ? { ...rate, isChecked: true }
+            : { ...rate, isChecked: false }
+        ),
+      };
     case "APPLY_FILTERS":
-      const filteredCategories = state.categories.map((cat) =>
-        cat.isChecked === true ? cat.name : null
+      const filteredCategories = state.categories.reduce(
+        (acc, cat) => (cat.isChecked === true ? [...acc, cat.name] : acc),
+        []
       );
-      console.log(filteredCategories);
-      const FilteredProducts = state.products.filter((item) =>
-        filteredCategories.includes(item.categoryName)
-      );
+      const filteredRating = state.rating.reduce((acc, ele) => {
+        return ele.isChecked === true ? ele.stars : acc;
+      }, 0);
+      const FilteredProducts = state.products
+        .filter((item) => filteredCategories.includes(item.categoryName))
+        .filter((item) => item.rating >= filteredRating);
       return { ...state, filteredProducts: FilteredProducts };
     default:
       return state;
