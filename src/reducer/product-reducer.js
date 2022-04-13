@@ -64,7 +64,6 @@ export default function productReducer(state, action) {
           { stars: 1, isChecked: true },
         ],
         range: 500,
-        filteredProducts: state.products,
       };
     default:
       return state;
