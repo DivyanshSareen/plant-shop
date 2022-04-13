@@ -10,17 +10,12 @@ export default function productReducer(state, action) {
     case "SORT_LOW_TO_HIGH":
       return {
         ...state,
-        products: state.products.sort((a, b) => a.price - b.price),
+        products: state.filteredProducts.sort((a, b) => a.price - b.price),
       };
     case "SORT_HIGH_TO_LOW":
       return {
         ...state,
-        products: state.products.sort((a, b) => b.price - a.price),
-      };
-    case "FILTER_BY_RATING":
-      return {
-        ...state,
-        products: state.products.filter((pd) => pd.rating >= action.payload),
+        products: state.filteredProducts.sort((a, b) => b.price - a.price),
       };
     case "UPDATE_CATEGORY":
       return {
@@ -38,6 +33,8 @@ export default function productReducer(state, action) {
             : { ...rate, isChecked: false }
         ),
       };
+    case "UPDATE_RANGE":
+      return { ...state, range: action.payload };
     case "APPLY_FILTERS":
       const filteredCategories = state.categories.reduce(
         (acc, cat) => (cat.isChecked === true ? [...acc, cat.name] : acc),
@@ -48,7 +45,8 @@ export default function productReducer(state, action) {
       }, 0);
       const FilteredProducts = state.products
         .filter((item) => filteredCategories.includes(item.categoryName))
-        .filter((item) => item.rating >= filteredRating);
+        .filter((item) => item.rating >= filteredRating)
+        .filter((item) => item.price <= state.range);
       return { ...state, filteredProducts: FilteredProducts };
     default:
       return state;
