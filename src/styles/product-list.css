@@ -59,3 +59,7 @@
 .badge > i{
     color: var(--white);
 }
+
+.price-input{
+    padding: 0;
+}

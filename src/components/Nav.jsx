@@ -17,11 +17,11 @@ export default function Nav() {
           </Link>
           <div className='nav-list'>
             <div className='nav-item input search'>
-              <label for='search'>
+              <label htmlFor='search'>
                 <i className='fa-solid fa-magnifying-glass'></i>{" "}
               </label>
               <input
-                class='input-data'
+                className='input-data'
                 type='text'
                 id='search'
                 placeholder='Search Products'></input>
