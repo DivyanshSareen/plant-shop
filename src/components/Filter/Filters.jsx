@@ -1,7 +1,10 @@
-import CategoryFilter from "./CategoryFilter";
-import RatingFilter from "./RatingFilter";
-import SortFilter from "./SortFilter";
-import PriceFilter from "./PriceFilter";
+import {
+  CategoryFilter,
+  RatingFilter,
+  SortFilter,
+  PriceFilter,
+} from "./FilterIndex";
+
 import { useProduct } from "../../context/product-context";
 
 export default function Filters() {
