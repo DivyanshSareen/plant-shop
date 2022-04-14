@@ -2,12 +2,13 @@ export default function PriceFilter({ productState, productDispatch }) {
   return (
     <>
       <input
-        className='input-data'
+        className='input-data price-input'
         type='range'
         id='price'
         name='price'
         min='0'
         max='500'
+        step='250'
         value={productState.range}
         defaultValue={500}
         onChange={(e) => {
