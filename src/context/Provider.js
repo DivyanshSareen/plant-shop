@@ -2,14 +2,17 @@ import { CategoryProvider } from "./category-context";
 import { ProductProvider } from "./product-context";
 import { CartProvider } from "./cart-context";
 import { WishlistProvider } from "./wishlist-context";
+import { AuthProvider } from "./auth-context";
 
 export default function Provider({ children }) {
   return (
     <CategoryProvider>
       <ProductProvider>
-        <CartProvider>
-          <WishlistProvider>{children}</WishlistProvider>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider>{children}</WishlistProvider>
+          </CartProvider>
+        </AuthProvider>
       </ProductProvider>
     </CategoryProvider>
   );
