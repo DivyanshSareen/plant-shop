@@ -20,7 +20,6 @@ function App() {
         <Route path='signup' element={<SignupPage />} />
         <Route path='listing' element={<ProductListings />} />
         <Route path='mock' element={<Mockman />} />
-
         <Route
           path='cart'
           element={
