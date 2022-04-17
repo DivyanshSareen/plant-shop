@@ -27,6 +27,16 @@ export default function ProductDetail({ cartProduct }) {
             type='number'
             name='quantity'
             id='quantity'
+            min='1'
+            max='5'
+            value={cartProduct.quantity}
+            onChange={(e) =>
+              cartDispatch({
+                type: "UPDATE_QUANTITY",
+                payload: cartProduct,
+                quantity: e.target.value,
+              })
+            }
           />
         </div>
         <div className='card-option'>
