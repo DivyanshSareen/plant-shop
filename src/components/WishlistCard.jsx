@@ -26,6 +26,10 @@ export default function WishlistCard({ wishProduct }) {
             className='btn'
             onClick={() => {
               cartDispatch({ type: "ADD_TO_CART", payload: wishProduct });
+              wishlistDispatch({
+                type: "REMOVE_FROM_WISHLIST",
+                payload: wishProduct,
+              });
             }}>
             Move to Cart
           </button>

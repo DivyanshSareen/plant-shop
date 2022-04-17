@@ -43,7 +43,14 @@ export default function ProductDetail({ cartProduct }) {
           <button
             className='btn'
             onClick={() => {
-              wishlistDispatch({ type: "WISH" });
+              cartDispatch({
+                type: "REMOVE_FROM_CART",
+                payload: cartProduct,
+              });
+              wishlistDispatch({
+                type: "ADD_TO_WISHLIST",
+                payload: cartProduct,
+              });
             }}>
             Move to Wishlist
           </button>

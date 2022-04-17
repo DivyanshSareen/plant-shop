@@ -1,7 +1,9 @@
 import { useCart } from "../context/cart-context";
+import { useWishlist } from "../context/wishlist-context";
 
 export default function ProductCard({ product }) {
   const { cartDispatch } = useCart();
+  const { wishlistDispatch } = useWishlist();
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
@@ -29,7 +31,13 @@ export default function ProductCard({ product }) {
             }}>
             Add to Cart
           </button>
-          <button className='btn'>Move to WishList</button>
+          <button
+            className='btn'
+            onClick={() => {
+              wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: product });
+            }}>
+            Move to WishList
+          </button>
         </div>
       </div>
     </div>
