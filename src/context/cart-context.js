@@ -23,16 +23,12 @@ export function CartProvider({ children }) {
     };
   };
 
-  const calcBill = () => {
+  useEffect(() => {
     const updatedBill = cartState.cart.reduce(billReducer, {
       total: 0,
       discount: 0,
     });
     cartDispatch({ type: "UPDATE_BILL", payload: updatedBill });
-  };
-
-  useEffect(() => {
-    calcBill();
   }, [cartState.cart]);
 
   // calculate bill through reducer
