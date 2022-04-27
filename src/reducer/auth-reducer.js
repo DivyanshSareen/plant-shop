@@ -1,22 +1,26 @@
-const AuthReducer = (state, action) => {
+const authReducer = (state, action) => {
   switch (action.type) {
-    case "LOGIN_USER":
-      state.loginUser();
-      return state;
-    case "UPDATE_FORM_ELEMENT":
-      return { ...state, [action.field]: action.payload };
-    case "TOGGLE_ELEMENT":
-      return { ...state, [action.field]: !action.payload };
-    case "UPDATE_USER":
+    case "ADD_EXISTING_AUTH_TOKEN":
       return {
         ...state,
-        encodeToken: action.payload.encodeToken,
-        user: action.payload.foundUser,
         isLoggedIn: true,
+        authToken: action.payload,
       };
+    case "LOGIN_USER":
+      if (action.remember_me) {
+        window.localStorage.setItem("authToken", action.payload.encodedToken);
+      }
+      return {
+        ...state,
+        isLoggedIn: true,
+        authToken: action.payload.encodedToken,
+      };
+    case "LOGOUT_USER":
+      window.localStorage.clear("authToken");
+      return { ...state, isLoggedIn: false, authToken: "" };
     default:
       return state;
   }
 };
 
-export default AuthReducer;
+export default authReducer;

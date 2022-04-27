@@ -1,41 +1,22 @@
 import { createContext, useContext, useReducer } from "react";
-import AuthReducer from "../reducer/auth-reducer";
-import axios from "axios";
+import authReducer from "../reducer/auth-reducer";
 
-const AuthContext = createContext();
+const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const loginUser = async () => {
-    let response;
-    try {
-      response = await axios.post("/api/auth/login", {
-        email: authState.userEmail,
-        password: authState.userPassword,
-      });
-    } catch (e) {
-      console.log(e);
-    } finally {
-      authDispatch({ type: "UPDATE_USER", payload: response.data });
-    }
-  };
+  const token = window.localStorage.getItem("authToken");
 
-  const [authState, authDispatch] = useReducer(AuthReducer, {
-    isLoggedIn: false,
-    userEmail: "adarshbalika@gmail.com",
-    userPassword: "adarshbalika",
-    remember_me: false,
-    loginUser,
-    user: {},
-    encodedToken: "",
+  const [authState, authDispatch] = useReducer(authReducer, {
+    isLoggedIn: token === null ? false : true,
+    authToken: token !== null ? token : "",
   });
-
   return (
-    <AuthContext.Provider value={{ authState, authDispatch }}>
+    <authContext.Provider value={{ authState, authDispatch }}>
       {children}
-    </AuthContext.Provider>
+    </authContext.Provider>
   );
 };
 
-const useAuth = () => useContext(AuthContext);
+const useAuth = () => useContext(authContext);
 
-export { AuthProvider, useAuth };
+export { useAuth, AuthProvider };
