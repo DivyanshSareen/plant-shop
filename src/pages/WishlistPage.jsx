@@ -1,4 +1,4 @@
-import WishlistGrid from "../components/WishlistGrid";
+import WishlistGrid from "../components/Grids/WishlistGrid";
 import "../styles/wishlist.css";
 
 export default function WishlistPage() {

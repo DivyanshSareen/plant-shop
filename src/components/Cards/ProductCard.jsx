@@ -1,5 +1,5 @@
-import { useCart } from "../context/cart-context";
-import { useWishlist } from "../context/wishlist-context";
+import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 
 export default function ProductCard({ product }) {
   const { cartDispatch } = useCart();
@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../assests${product.image}`)} alt='card' />
+        <img src={require(`../../assests${product.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>

@@ -31,8 +31,6 @@ export function CartProvider({ children }) {
     cartDispatch({ type: "UPDATE_BILL", payload: updatedBill });
   }, [cartState.cart]);
 
-  // calculate bill through reducer
-
   return (
     <CartContext.Provider
       value={{

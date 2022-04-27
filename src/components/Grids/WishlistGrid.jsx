@@ -1,5 +1,5 @@
-import WishlistCard from "./WishlistCard";
-import { useWishlist } from "../context/wishlist-context";
+import WishlistCard from "../Cards/WishlistCard";
+import { useWishlist } from "../../context/wishlist-context";
 
 export default function ProductGrid() {
   const { wishlistState } = useWishlist();
