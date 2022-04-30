@@ -1,7 +1,5 @@
-import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { CartReducer } from "../reducer/cart-reducer";
-import { useAuth } from "./auth-context";
 
 const CartContext = createContext();
 
@@ -11,8 +9,6 @@ const noItemsCart = cart.length;
 const bill = { total: 0, discount: 0, deliveryCharge: 75 };
 
 export function CartProvider({ children }) {
-  const { authState } = useAuth();
-
   const [cartState, cartDispatch] = useReducer(CartReducer, {
     cart,
     noItemsCart,
