@@ -1,5 +1,5 @@
-import { useWishlist } from "../context/wishlist-context";
-import { useCart } from "../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
+import { useCart } from "../../context/cart-context";
 
 export default function WishlistCard({ wishProduct }) {
   const { wishlistDispatch } = useWishlist();
@@ -7,7 +7,7 @@ export default function WishlistCard({ wishProduct }) {
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../assests${wishProduct.image}`)} alt='card' />
+        <img src={require(`../../assests${wishProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>
@@ -26,6 +26,10 @@ export default function WishlistCard({ wishProduct }) {
             className='btn'
             onClick={() => {
               cartDispatch({ type: "ADD_TO_CART", payload: wishProduct });
+              wishlistDispatch({
+                type: "REMOVE_FROM_WISHLIST",
+                payload: wishProduct,
+              });
             }}>
             Move to Cart
           </button>

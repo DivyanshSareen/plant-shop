@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { CartReducer } from "../reducer/cart-reducer";
 
 const CartContext = createContext();
@@ -15,7 +15,21 @@ export function CartProvider({ children }) {
     bill,
   });
 
-  // calculate bill through reducer
+  const billReducer = (acc, ele) => {
+    return {
+      ...acc,
+      total: acc.total + ele.price * ele.quantity,
+      discount: acc.discount + ele.discount_amt * ele.quantity,
+    };
+  };
+
+  useEffect(() => {
+    const updatedBill = cartState.cart.reduce(billReducer, {
+      total: 0,
+      discount: 0,
+    });
+    cartDispatch({ type: "UPDATE_BILL", payload: updatedBill });
+  }, [cartState.cart]);
 
   return (
     <CartContext.Provider

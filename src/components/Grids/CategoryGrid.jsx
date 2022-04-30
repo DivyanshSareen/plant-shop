@@ -1,6 +1,6 @@
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "../Cards/CategoryCard";
 
-import { useCategory } from "../context/category-context";
+import { useCategory } from "../../context/category-context";
 
 export default function CategoryGrid() {
   const { categories } = useCategory();

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/cart-context";
 import { useWishlist } from "../context/wishlist-context";
+import { useAuth } from "../context/auth-context";
 
 export default function Nav() {
   const { cartState } = useCart();
   const { wishlistState } = useWishlist();
+  const { authState, authDispatch } = useAuth();
 
   return (
     <>
@@ -26,12 +28,24 @@ export default function Nav() {
                 id='search'
                 placeholder='Search Products'></input>
             </div>
-            <Link to='./login'>
-              <button className='nav-item btn btn-ghost login-btn'>
-                <i className='fa-solid fa-arrow-right-to-bracket'></i>
-                Login
-              </button>
-            </Link>
+            {authState.isLoggedIn ? (
+              <Link
+                to='/'
+                onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
+                <button className='nav-item btn btn-ghost login-btn'>
+                  <i className='fa-solid fa-arrow-right-to-bracket'></i>
+                  Logout
+                </button>
+              </Link>
+            ) : (
+              <Link to='./login'>
+                <button className='nav-item btn btn-ghost login-btn'>
+                  <i className='fa-solid fa-arrow-right-to-bracket'></i>
+                  Login
+                </button>
+              </Link>
+            )}
+
             <Link to='./wishlist'>
               <div className='nav-item icon-badge btn btn-ghost'>
                 <i className='fa-regular fa-heart icon'>

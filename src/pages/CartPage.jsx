@@ -1,5 +1,5 @@
 import BillingDetail from "../components/BillingDetail";
-import CartGrid from "../components/CartGrid";
+import CartGrid from "../components/Grids/CartGrid";
 import "../styles/cart.css";
 
 export default function CartPage() {

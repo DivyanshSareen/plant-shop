@@ -10,7 +10,6 @@ export default function PriceFilter({ productState, productDispatch }) {
         max='500'
         step='250'
         value={productState.range}
-        defaultValue={500}
         onChange={(e) => {
           productDispatch({ type: "UPDATE_RANGE", payload: e.target.value });
         }}></input>

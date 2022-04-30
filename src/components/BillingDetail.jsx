@@ -9,9 +9,7 @@ export default function BillingDetail() {
         <div className='h6 bill-heading'>PRICE DETAILS</div>
         <hr />
         <div className='price-details'>
-          <div className='price-detail'>
-            Price ({cartState.noItemsCart} items)
-          </div>
+          <div className='price-detail'>Price</div>
           <div className='price-value'>Rs. {cartState.bill.total}</div>
           <div className='price-detail'>Discount</div>
           <div className='price-value'>- Rs. {cartState.bill.discount}</div>

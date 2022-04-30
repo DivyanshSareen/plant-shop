@@ -1,5 +1,5 @@
-import { useCart } from "../context/cart-context";
-import { useWishlist } from "../context/wishlist-context";
+import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 
 export default function ProductDetail({ cartProduct }) {
   const { cartDispatch } = useCart();
@@ -7,7 +7,7 @@ export default function ProductDetail({ cartProduct }) {
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../assests${cartProduct.image}`)} alt='card' />
+        <img src={require(`../../assests${cartProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>
@@ -27,6 +27,16 @@ export default function ProductDetail({ cartProduct }) {
             type='number'
             name='quantity'
             id='quantity'
+            min='1'
+            max='5'
+            value={cartProduct.quantity}
+            onChange={(e) =>
+              cartDispatch({
+                type: "UPDATE_QUANTITY",
+                payload: cartProduct,
+                quantity: e.target.value,
+              })
+            }
           />
         </div>
         <div className='card-option'>
@@ -43,7 +53,14 @@ export default function ProductDetail({ cartProduct }) {
           <button
             className='btn'
             onClick={() => {
-              wishlistDispatch({ type: "WISH" });
+              cartDispatch({
+                type: "REMOVE_FROM_CART",
+                payload: cartProduct,
+              });
+              wishlistDispatch({
+                type: "ADD_TO_WISHLIST",
+                payload: cartProduct,
+              });
             }}>
             Move to Wishlist
           </button>

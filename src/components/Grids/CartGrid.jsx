@@ -1,5 +1,5 @@
-import ProductDetail from "./ProductDetail";
-import { useCart } from "../context/cart-context";
+import ProductDetail from "../Cards/ProductDetail";
+import { useCart } from "../../context/cart-context";
 
 export default function CartGrid() {
   const { cartState } = useCart();

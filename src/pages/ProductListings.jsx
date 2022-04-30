@@ -1,4 +1,4 @@
-import ProductGrid from "../components/ProductGrid";
+import ProductGrid from "../components/Grids/ProductGrid";
 import Filters from "../components/Filter/Filters";
 import "../styles/product-list.css";
 

@@ -1,5 +1,5 @@
-import ProductCard from "./ProductCard";
-import { useProduct } from "../context/product-context";
+import ProductCard from "../Cards/ProductCard";
+import { useProduct } from "../../context/product-context";
 
 export default function ProductGrid() {
   const { productState } = useProduct();
