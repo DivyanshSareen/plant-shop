@@ -8,6 +8,7 @@ import SignupPage from "./pages/SignupPage";
 import WishlistPage from "./pages/WishlistPage";
 import ProductListings from "./pages/ProductListings";
 import RequiresAuth from "./RequiresAuth";
+import NotFoundPage from "./pages/NotFoundPage";
 import Mockman from "mockman-js";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             </RequiresAuth>
           }
         />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </>
   );
