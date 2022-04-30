@@ -3,28 +3,7 @@ import wishlistReducer from "../reducer/wishlist-reducer";
 
 const WishlistContext = createContext();
 
-const wishlist = [
-  {
-    _id: 2121,
-    name: "litchi",
-    categoryName: "fruit",
-    image: "/fruit/litchi.webp",
-    price: 400,
-    discount: 10,
-    discount_amt: 40,
-    rating: 4,
-  },
-  {
-    _id: 1212,
-    name: "mango",
-    categoryName: "fruit",
-    image: "/fruit/mango.webp",
-    price: 400,
-    discount: 10,
-    discount_amt: 40,
-    rating: 5,
-  },
-];
+const wishlist = [];
 
 const noItemsWishlist = wishlist.length;
 

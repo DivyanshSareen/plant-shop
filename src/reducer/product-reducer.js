@@ -65,6 +65,15 @@ export default function productReducer(state, action) {
         ],
         range: 500,
       };
+    case "CATEGORY_INIT":
+      return {
+        ...state,
+        categories: state.categories.map((cat) =>
+          cat.name === action.payload
+            ? { ...cat, isChecked: true }
+            : { ...cat, isChecked: false }
+        ),
+      };
     default:
       return state;
   }
