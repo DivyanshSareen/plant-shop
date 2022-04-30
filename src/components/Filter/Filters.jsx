@@ -7,7 +7,7 @@ import {
 
 import { useProduct } from "../../context/product-context";
 
-export default function Filters() {
+const Filters = () => {
   const { productState, productDispatch } = useProduct();
   return (
     <aside>
@@ -56,4 +56,5 @@ export default function Filters() {
       </div>
     </aside>
   );
-}
+};
+export default Filters;

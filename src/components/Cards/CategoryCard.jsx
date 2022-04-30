@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useProduct } from "../../context/product-context";
 
-export default function CategoryCard({ category }) {
+const CategoryCard = ({ category }) => {
   const { productDispatch } = useProduct();
   return (
     <Link to='listing'>
@@ -28,4 +28,5 @@ export default function CategoryCard({ category }) {
       </div>
     </Link>
   );
-}
+};
+export default CategoryCard;

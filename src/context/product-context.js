@@ -23,7 +23,7 @@ const rating = [
 ];
 const range = 500; // max price of products
 
-export function ProductProvider({ children }) {
+const ProductProvider = ({ children }) => {
   const [productState, productDispatch] = useReducer(productReducer, {
     products,
     filteredProducts,
@@ -63,8 +63,10 @@ export function ProductProvider({ children }) {
       {children}
     </ProductContext.Provider>
   );
-}
+};
 
-export function useProduct() {
+const useProduct = () => {
   return useContext(ProductContext);
-}
+};
+
+export { ProductProvider, useProduct };

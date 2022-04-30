@@ -1,7 +1,7 @@
 import ProductCard from "../Cards/ProductCard";
 import { useProduct } from "../../context/product-context";
 
-export default function ProductGrid() {
+const ProductGrid = () => {
   const { productState } = useProduct();
 
   return (
@@ -13,4 +13,5 @@ export default function ProductGrid() {
       </div>
     </main>
   );
-}
+};
+export default ProductGrid;

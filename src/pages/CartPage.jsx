@@ -2,7 +2,7 @@ import BillingDetail from "../components/BillingDetail";
 import CartGrid from "../components/Grids/CartGrid";
 import "../styles/cart.css";
 
-export default function CartPage() {
+const CartPage = () => {
   return (
     <>
       <h4 className='h4 center-text cart-head'>My Cart</h4>
@@ -12,4 +12,5 @@ export default function CartPage() {
       </div>
     </>
   );
-}
+};
+export default CartPage;

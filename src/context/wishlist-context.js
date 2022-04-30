@@ -7,7 +7,7 @@ const wishlist = [];
 
 const noItemsWishlist = wishlist.length;
 
-export function WishlistProvider({ children }) {
+const WishlistProvider = ({ children }) => {
   const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, {
     wishlist,
     noItemsWishlist,
@@ -17,6 +17,8 @@ export function WishlistProvider({ children }) {
       {children}
     </WishlistContext.Provider>
   );
-}
+};
 
-export const useWishlist = () => useContext(WishlistContext);
+const useWishlist = () => useContext(WishlistContext);
+
+export { WishlistProvider, useWishlist };

@@ -1,7 +1,7 @@
 import { useWishlist } from "../../context/wishlist-context";
 import { useCart } from "../../context/cart-context";
 
-export default function WishlistCard({ wishProduct }) {
+const WishlistCard = ({ wishProduct }) => {
   const { wishlistDispatch } = useWishlist();
   const { cartDispatch } = useCart();
   return (
@@ -47,4 +47,5 @@ export default function WishlistCard({ wishProduct }) {
       </div>
     </div>
   );
-}
+};
+export default WishlistCard;

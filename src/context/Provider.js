@@ -4,7 +4,7 @@ import { CartProvider } from "./cart-context";
 import { WishlistProvider } from "./wishlist-context";
 import { AuthProvider } from "./auth-context";
 
-export default function Provider({ children }) {
+const Provider = ({ children }) => {
   return (
     <CategoryProvider>
       <ProductProvider>
@@ -16,4 +16,6 @@ export default function Provider({ children }) {
       </ProductProvider>
     </CategoryProvider>
   );
-}
+};
+
+export default Provider;

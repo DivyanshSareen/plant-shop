@@ -3,7 +3,7 @@ import { useCart } from "../context/cart-context";
 import { useWishlist } from "../context/wishlist-context";
 import { useAuth } from "../context/auth-context";
 
-export default function Nav() {
+const Nav = () => {
   const { cartState } = useCart();
   const { wishlistState } = useWishlist();
   const { authState, authDispatch } = useAuth();
@@ -67,4 +67,5 @@ export default function Nav() {
       </nav>
     </>
   );
-}
+};
+export default Nav;

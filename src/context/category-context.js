@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 const CategoryContext = createContext();
 
-export function CategoryProvider({ children }) {
+const CategoryProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
 
   async function getCategories() {
@@ -30,8 +30,10 @@ export function CategoryProvider({ children }) {
       {children}
     </CategoryContext.Provider>
   );
-}
+};
 
-export function useCategory() {
+const useCategory = () => {
   return useContext(CategoryContext);
-}
+};
+
+export { CategoryProvider, useCategory };

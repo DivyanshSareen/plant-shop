@@ -8,7 +8,7 @@ const noItemsCart = cart.length;
 
 const bill = { total: 0, discount: 0, deliveryCharge: 75 };
 
-export function CartProvider({ children }) {
+const CartProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(CartReducer, {
     cart,
     noItemsCart,
@@ -40,8 +40,10 @@ export function CartProvider({ children }) {
       {children}
     </CartContext.Provider>
   );
-}
+};
 
-export function useCart() {
+const useCart = () => {
   return useContext(CartContext);
-}
+};
+
+export { CartProvider, useCart };

@@ -1,4 +1,4 @@
-export default function RatingFilter({ rating, productDispatch }) {
+const RatingFilter = ({ rating, productDispatch }) => {
   return (
     <>
       <div className='input inline-input'>
@@ -19,4 +19,5 @@ export default function RatingFilter({ rating, productDispatch }) {
       </div>
     </>
   );
-}
+};
+export default RatingFilter;
