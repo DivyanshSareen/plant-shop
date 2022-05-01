@@ -11,7 +11,7 @@ const Loading = () => {
           transform: "translate(-50%,-50%)",
         }}
         alt='loading'
-        src={require("../../assests/loading.gif")}></img>
+        src={require("../../assets/loading.gif")}></img>
       <h4 className='h4'>Loading</h4>
     </div>
   );

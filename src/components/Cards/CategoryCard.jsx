@@ -18,7 +18,7 @@ const CategoryCard = ({ category }) => {
         </div>
         <div className='card-img resp-img'>
           <img
-            src={require(`../../assests/${category.image}`)}
+            src={require(`../../assets/${category.image}`)}
             alt='product-category'></img>
         </div>
         <div className='card-badge'>

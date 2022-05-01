@@ -8,15 +8,17 @@
     background-size: cover;
     margin: 3rem;
     border-radius: var(--radius-m);
+    padding-top: 6em;
 }
 
 .hero-title {
     color: var(--primary-100);
+    padding-left: 1rem;
 }
 
 .hero-subtitle {
     color: var(--background-grey);
-    padding-left: 1em;
+    padding-left: 1rem;
 }
 
 /* category grid */

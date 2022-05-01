@@ -7,7 +7,7 @@ const CartCard = ({ cartProduct }) => {
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../../assests${cartProduct.image}`)} alt='card' />
+        <img src={require(`../../assets${cartProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>

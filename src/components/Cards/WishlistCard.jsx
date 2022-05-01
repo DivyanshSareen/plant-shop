@@ -7,7 +7,7 @@ const WishlistCard = ({ wishProduct }) => {
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../../assests${wishProduct.image}`)} alt='card' />
+        <img src={require(`../../assets${wishProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>

@@ -1,16 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import "./styles/common.css";
 import Nav from "./components/Nav";
-import CartPage from "./pages/CartPage";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import WishlistPage from "./pages/WishlistPage";
-import ProductListings from "./pages/ProductListings";
 import RequiresAuth from "./RequiresAuth";
-import NotFoundPage from "./pages/NotFoundPage";
 import Mockman from "mockman-js";
-
+import {
+  CartPage,
+  HomePage,
+  LoginPage,
+  SignupPage,
+  WishlistPage,
+  ProductListings,
+  NotFoundPage,
+} from "./pages/PageIndex";
 function App() {
   return (
     <>
