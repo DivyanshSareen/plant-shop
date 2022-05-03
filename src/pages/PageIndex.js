@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
 import NotFoundPage from "./NotFoundPage";
 import ProductListings from "./ProductListings";
+import ServerErrorPage from "./ServerErrorPage";
 import SignupPage from "./SignupPage";
 import WishlistPage from "./WishlistPage";
 
@@ -12,6 +13,7 @@ export {
   LoginPage,
   NotFoundPage,
   ProductListings,
+  ServerErrorPage,
   SignupPage,
   WishlistPage,
 };

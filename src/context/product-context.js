@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import productReducer from "../reducer/product-reducer";
 
@@ -24,6 +25,7 @@ const rating = [
 const range = 500; // max price of products
 
 const ProductProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [productState, productDispatch] = useReducer(productReducer, {
     products,
     filteredProducts,
@@ -39,7 +41,7 @@ const ProductProvider = ({ children }) => {
     try {
       response = await axios.get("/api/products");
     } catch (error) {
-      console.log(error); // todo: add error and loading feedback
+      navigate("/error");
     } finally {
       productDispatch({
         type: "ADD_PRODUCTS",

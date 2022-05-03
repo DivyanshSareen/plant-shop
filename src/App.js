@@ -10,6 +10,7 @@ import {
   SignupPage,
   WishlistPage,
   ProductListings,
+  ServerErrorPage,
   NotFoundPage,
 } from "./pages/PageIndex";
 function App() {
@@ -39,6 +40,7 @@ function App() {
           }
         />
         <Route path='*' element={<NotFoundPage />} />
+        <Route path='error' element={<ServerErrorPage />} />
       </Routes>
     </>
   );

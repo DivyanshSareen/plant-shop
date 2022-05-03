@@ -1,7 +1,11 @@
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { useAuth } from "../../context/auth-context";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
+  const { authState } = useAuth();
+  const navigate = useNavigate();
   const { cartDispatch } = useCart();
   const { wishlistDispatch } = useWishlist();
   return (
@@ -27,14 +31,21 @@ const ProductCard = ({ product }) => {
           <button
             className='btn'
             onClick={() => {
-              cartDispatch({ type: "ADD_TO_CART", payload: product });
+              authState.isLoggedIn
+                ? cartDispatch({ type: "ADD_TO_CART", payload: product })
+                : navigate("/login");
             }}>
             Add to Cart
           </button>
           <button
             className='btn'
             onClick={() => {
-              wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: product });
+              authState.isLoggedIn
+                ? wishlistDispatch({
+                    type: "ADD_TO_WISHLIST",
+                    payload: product,
+                  })
+                : navigate("/login");
             }}>
             Move to WishList
           </button>

@@ -16,6 +16,12 @@ export default function wishlistReducer(state, action) {
         ),
         noItemsWishlist: state.noItemsWishlist - 1,
       };
+    case "EMPTY_WISHLIST":
+      return {
+        ...state,
+        wishlist: [],
+        noItemsWishlist: 0,
+      };
     default:
       return state;
   }
