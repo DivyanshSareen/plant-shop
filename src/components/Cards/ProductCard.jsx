@@ -2,6 +2,7 @@ import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import { useAuth } from "../../context/auth-context";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const { authState } = useAuth();
@@ -10,23 +11,25 @@ const ProductCard = ({ product }) => {
   const { wishlistDispatch } = useWishlist();
   return (
     <div className='card card-horizontal'>
-      <div className='card-img'>
+      <Link to={`/product/${product._id}`} className='card-img'>
         <img src={require(`../../assets${product.image}`)} alt='card' />
-      </div>
+      </Link>
       <div className='card-content'>
-        <div className='card-head'>
-          <div className='card-title h5'>{product.name}</div>
-          <div className='card-badge'>
-            <div className='badge'>
-              <i className='fa-solid fa-star checked'></i> {product.rating}
+        <Link to={`/product/${product._id}`}>
+          <div className='card-head'>
+            <div className='card-title h5'>{product.name}</div>
+            <div className='card-badge'>
+              <div className='badge'>
+                <i className='fa-solid fa-star checked'></i> {product.rating}
+              </div>
             </div>
+            <div className='card-subtitle h4'>
+              <ins>Rs. {product.price - product.discount_amt}</ins>{" "}
+              <del>Rs. {product.price}</del>
+            </div>
+            <div className='offer'>{product.discount}% off</div>
           </div>
-          <div className='card-subtitle h4'>
-            <ins>Rs. {product.price - product.discount_amt}</ins>{" "}
-            <del>Rs. {product.price}</del>
-          </div>
-          <div className='offer'>{product.discount} off</div>
-        </div>
+        </Link>
         <div className='card-option'>
           <button
             className='btn'

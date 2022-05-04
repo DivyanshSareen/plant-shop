@@ -12,8 +12,8 @@ const WishlistCard = ({ wishProduct }) => {
       <div className='card-content'>
         <div className='card-head'>
           <div className='card-title h5'>{wishProduct.name}</div>
-          <div class='badge'>
-            <i class='fa-solid fa-star checked'></i> {wishProduct.rating}
+          <div className='badge'>
+            <i className='fa-solid fa-star checked'></i> {wishProduct.rating}
           </div>
           <div className='card-subtitle h4'>
             <ins>Rs. {wishProduct.price - wishProduct.discount_amt}</ins>{" "}

@@ -10,6 +10,7 @@ import {
   SignupPage,
   WishlistPage,
   ProductListings,
+  ProductPage,
   ServerErrorPage,
   NotFoundPage,
 } from "./pages/PageIndex";
@@ -22,6 +23,7 @@ function App() {
         <Route path='login' element={<LoginPage />} />
         <Route path='signup' element={<SignupPage />} />
         <Route path='listing' element={<ProductListings />} />
+        <Route path='/product/:productId' element={<ProductPage />} />
         <Route path='mock' element={<Mockman />} />
         <Route
           path='cart'

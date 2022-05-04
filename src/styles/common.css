@@ -7,6 +7,10 @@
     --white: #eaeaea;
 }
 
+a {
+    color: black;
+}
+
 /* overriding btn component */
 .btn {
     margin: 0;
@@ -61,4 +65,16 @@
 
 .icon-badge>i {
     font-size: 1.8em;
+}
+
+.product-page{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+    width: 75%;
+}
+
+.product-page > .card-content{
+    margin-left: auto;
+    margin-right: auto;
 }
