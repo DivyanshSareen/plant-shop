@@ -19,6 +19,7 @@ const ProductPage = () => {
       console.log(product);
     }
   };
+  /* eslint-disable */
   useEffect(() => {
     getProductInfo();
   }, []);

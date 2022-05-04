@@ -17,7 +17,7 @@ const CategoryProvider = ({ children }) => {
       setCategories(response.data.categories);
     }
   }
-
+  /* eslint-disable */
   useEffect(() => {
     getCategories();
   }, []);

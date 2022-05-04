@@ -51,6 +51,7 @@ const ProductProvider = ({ children }) => {
   }
 
   // called once in the beginning
+  /* eslint-disable */
   useEffect(() => {
     getProducts();
   }, []);
