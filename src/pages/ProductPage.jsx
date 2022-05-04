@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useWishlist } from "../context/wishlist-context";
 import { useCart } from "../context/cart-context";
+import { useAuth } from "../context/auth-context";
 
 const ProductPage = () => {
+  const { authState } = useAuth();
   const navigate = useNavigate();
   const [product, setProduct] = useState({ image: "/loading.gif" });
   const { wishlistDispatch } = useWishlist();
@@ -47,21 +49,21 @@ const ProductPage = () => {
           <button
             className='btn'
             onClick={() => {
-              cartDispatch({ type: "ADD_TO_CART", payload: product });
-              wishlistDispatch({
-                type: "ADD_TO_CART",
-                payload: product,
-              });
+              authState.isLoggedIn
+                ? cartDispatch({ type: "ADD_TO_CART", payload: product })
+                : navigate("/login");
             }}>
             Add to Cart
           </button>
           <button
             className='btn'
             onClick={() =>
-              wishlistDispatch({
-                type: "MOVE_TO_WISHLIST",
-                payload: product,
-              })
+              authState.isLoggedIn
+                ? wishlistDispatch({
+                    type: "MOVE_TO_WISHLIST",
+                    payload: product,
+                  })
+                : navigate("/login")
             }>
             Move to Wishlist
           </button>
