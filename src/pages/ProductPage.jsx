@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useWishlist } from "../context/wishlist-context";
 import { useCart } from "../context/cart-context";
 
 const ProductPage = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState({ image: "/loading.gif" });
   const { wishlistDispatch } = useWishlist();
   const { cartDispatch } = useCart();
@@ -14,7 +15,7 @@ const ProductPage = () => {
         .get(`/api/products/${params.productId}`)
         .then((r) => setProduct(r.data.product));
     } catch (e) {
-      console.log(e);
+      navigate("/error");
     } finally {
       console.log(product);
     }
@@ -48,21 +49,21 @@ const ProductPage = () => {
             onClick={() => {
               cartDispatch({ type: "ADD_TO_CART", payload: product });
               wishlistDispatch({
-                type: "REMOVE_FROM_WISHLIST",
+                type: "ADD_TO_CART",
                 payload: product,
               });
             }}>
-            Move to Cart
+            Add to Cart
           </button>
           <button
             className='btn'
             onClick={() =>
               wishlistDispatch({
-                type: "REMOVE_FROM_WISHLIST",
+                type: "MOVE_TO_WISHLIST",
                 payload: product,
               })
             }>
-            Remove
+            Move to Wishlist
           </button>
         </div>
       </div>
