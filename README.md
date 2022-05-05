@@ -36,6 +36,10 @@ Follow these steps to setup this web app on your local server:
 5. Now staying in the root directory run the command: `npm start`
 6. You will find the web app running on your local server.
 
+## Future Goals
+
+* Search Functionality
+
 ### Devloped by
 
 * Divyansh Sareen  (•◡•) /
