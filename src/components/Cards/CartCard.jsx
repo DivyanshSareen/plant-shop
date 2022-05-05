@@ -1,13 +1,13 @@
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 
-export default function ProductDetail({ cartProduct }) {
+const CartCard = ({ cartProduct }) => {
   const { cartDispatch } = useCart();
   const { wishlistDispatch } = useWishlist();
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../../assests${cartProduct.image}`)} alt='card' />
+        <img src={require(`../../assets${cartProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>
@@ -68,4 +68,5 @@ export default function ProductDetail({ cartProduct }) {
       </div>
     </div>
   );
-}
+};
+export default CartCard;

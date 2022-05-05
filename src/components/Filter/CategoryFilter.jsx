@@ -1,4 +1,4 @@
-export default function CategoryFilter({ category, productDispatch }) {
+const CategoryFilter = ({ category, productDispatch }) => {
   return (
     <>
       <div className='input inline-input'>
@@ -17,4 +17,5 @@ export default function CategoryFilter({ category, productDispatch }) {
       </div>
     </>
   );
-}
+};
+export default CategoryFilter;

@@ -41,6 +41,8 @@ export function CartReducer(state, action) {
           discount: action.payload.discount,
         },
       };
+    case "EMPTY_CART":
+      return { ...state, cart: [], noItemsCart: 0 };
     default:
       return state;
   }

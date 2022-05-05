@@ -1,4 +1,4 @@
-export default function PriceFilter({ productState, productDispatch }) {
+const PriceFilter = ({ productState, productDispatch }) => {
   return (
     <>
       <input
@@ -20,4 +20,5 @@ export default function PriceFilter({ productState, productDispatch }) {
       </div>
     </>
   );
-}
+};
+export default PriceFilter;

@@ -1,4 +1,4 @@
-export default function SortFilter({ productDispatch }) {
+const SortFilter = ({ productDispatch }) => {
   return (
     <>
       <div className='input inline-input'>
@@ -23,4 +23,5 @@ export default function SortFilter({ productDispatch }) {
       </div>
     </>
   );
-}
+};
+export default SortFilter;

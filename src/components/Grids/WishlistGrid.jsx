@@ -1,7 +1,7 @@
 import WishlistCard from "../Cards/WishlistCard";
 import { useWishlist } from "../../context/wishlist-context";
 
-export default function ProductGrid() {
+const WishlistGrid = () => {
   const { wishlistState } = useWishlist();
 
   return (
@@ -13,4 +13,5 @@ export default function ProductGrid() {
       </div>
     </main>
   );
-}
+};
+export default WishlistGrid;

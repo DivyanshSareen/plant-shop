@@ -3,9 +3,9 @@ import { useCart } from "../context/cart-context";
 import { useWishlist } from "../context/wishlist-context";
 import { useAuth } from "../context/auth-context";
 
-export default function Nav() {
-  const { cartState } = useCart();
-  const { wishlistState } = useWishlist();
+const Nav = () => {
+  const { cartState, cartDispatch } = useCart();
+  const { wishlistState, wishlistDispatch } = useWishlist();
   const { authState, authDispatch } = useAuth();
 
   return (
@@ -31,7 +31,11 @@ export default function Nav() {
             {authState.isLoggedIn ? (
               <Link
                 to='/'
-                onClick={() => authDispatch({ type: "LOGOUT_USER" })}>
+                onClick={() => {
+                  authDispatch({ type: "LOGOUT_USER" });
+                  cartDispatch({ type: "EMPTY_CART" });
+                  wishlistDispatch({ type: "EMPTY_WISHLIST" });
+                }}>
                 <button className='nav-item btn btn-ghost login-btn'>
                   <i className='fa-solid fa-arrow-right-to-bracket'></i>
                   Logout
@@ -67,4 +71,5 @@ export default function Nav() {
       </nav>
     </>
   );
-}
+};
+export default Nav;

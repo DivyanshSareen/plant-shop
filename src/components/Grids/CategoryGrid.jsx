@@ -2,7 +2,7 @@ import CategoryCard from "../Cards/CategoryCard";
 
 import { useCategory } from "../../context/category-context";
 
-export default function CategoryGrid() {
+const CategoryGrid = () => {
   const { categories } = useCategory();
 
   return (
@@ -16,4 +16,5 @@ export default function CategoryGrid() {
       </section>
     </>
   );
-}
+};
+export default CategoryGrid;

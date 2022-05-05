@@ -1,19 +1,19 @@
 import { useWishlist } from "../../context/wishlist-context";
 import { useCart } from "../../context/cart-context";
 
-export default function WishlistCard({ wishProduct }) {
+const WishlistCard = ({ wishProduct }) => {
   const { wishlistDispatch } = useWishlist();
   const { cartDispatch } = useCart();
   return (
     <div className='card card-horizontal'>
       <div className='card-img'>
-        <img src={require(`../../assests${wishProduct.image}`)} alt='card' />
+        <img src={require(`../../assets${wishProduct.image}`)} alt='card' />
       </div>
       <div className='card-content'>
         <div className='card-head'>
           <div className='card-title h5'>{wishProduct.name}</div>
-          <div class='badge'>
-            <i class='fa-solid fa-star checked'></i> {wishProduct.rating}
+          <div className='badge'>
+            <i className='fa-solid fa-star checked'></i> {wishProduct.rating}
           </div>
           <div className='card-subtitle h4'>
             <ins>Rs. {wishProduct.price - wishProduct.discount_amt}</ins>{" "}
@@ -47,4 +47,5 @@ export default function WishlistCard({ wishProduct }) {
       </div>
     </div>
   );
-}
+};
+export default WishlistCard;

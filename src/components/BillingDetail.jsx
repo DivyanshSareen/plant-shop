@@ -1,6 +1,6 @@
 import { useCart } from "../context/cart-context";
 
-export default function BillingDetail() {
+const BillingDetail = () => {
   const { cartState } = useCart();
 
   return (
@@ -35,4 +35,5 @@ export default function BillingDetail() {
       </div>
     </>
   );
-}
+};
+export default BillingDetail;

@@ -2,7 +2,7 @@ import ProductGrid from "../components/Grids/ProductGrid";
 import Filters from "../components/Filter/Filters";
 import "../styles/product-list.css";
 
-export default function ProductList() {
+const ProductList = () => {
   return (
     <>
       <section className='content'>
@@ -11,4 +11,5 @@ export default function ProductList() {
       </section>
     </>
   );
-}
+};
+export default ProductList;

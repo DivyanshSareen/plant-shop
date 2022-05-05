@@ -1,10 +1,14 @@
 @import url("https://peaceui.netlify.app/peace.css");
 
 :root {
-    --primary: #24AF01;
+    --primary: #469a57;
     --primary-100: #BAE2B0;
-    --secondary: #57B86A;
-    --white: #FFFFFF;
+    --secondary: #24AF01;
+    --white: #eaeaea;
+}
+
+a {
+    color: black;
 }
 
 /* overriding btn component */
@@ -61,4 +65,36 @@
 
 .icon-badge>i {
     font-size: 1.8em;
+}
+
+.product-page{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15vh;
+    width: 75%;
+}
+
+.product-page > .card-content{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.not-found-page{
+    height: 10rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.server-error-page{
+    height: 10rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
 }

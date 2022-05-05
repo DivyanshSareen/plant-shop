@@ -1,15 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import "./styles/common.css";
 import Nav from "./components/Nav";
-import CartPage from "./pages/CartPage";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignupPage";
-import WishlistPage from "./pages/WishlistPage";
-import ProductListings from "./pages/ProductListings";
 import RequiresAuth from "./RequiresAuth";
 import Mockman from "mockman-js";
-
+import {
+  CartPage,
+  HomePage,
+  LoginPage,
+  SignupPage,
+  WishlistPage,
+  ProductListings,
+  ProductPage,
+  ServerErrorPage,
+  NotFoundPage,
+} from "./pages/PageIndex";
 function App() {
   return (
     <>
@@ -19,6 +23,7 @@ function App() {
         <Route path='login' element={<LoginPage />} />
         <Route path='signup' element={<SignupPage />} />
         <Route path='listing' element={<ProductListings />} />
+        <Route path='/product/:productId' element={<ProductPage />} />
         <Route path='mock' element={<Mockman />} />
         <Route
           path='cart'
@@ -36,6 +41,8 @@ function App() {
             </RequiresAuth>
           }
         />
+        <Route path='*' element={<NotFoundPage />} />
+        <Route path='error' element={<ServerErrorPage />} />
       </Routes>
     </>
   );

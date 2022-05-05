@@ -1,40 +1,54 @@
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { useAuth } from "../../context/auth-context";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function ProductCard({ product }) {
+const ProductCard = ({ product }) => {
+  const { authState } = useAuth();
+  const navigate = useNavigate();
   const { cartDispatch } = useCart();
   const { wishlistDispatch } = useWishlist();
   return (
     <div className='card card-horizontal'>
-      <div className='card-img'>
-        <img src={require(`../../assests${product.image}`)} alt='card' />
-      </div>
+      <Link to={`/product/${product._id}`} className='card-img'>
+        <img src={require(`../../assets${product.image}`)} alt='card' />
+      </Link>
       <div className='card-content'>
-        <div className='card-head'>
-          <div className='card-title h5'>{product.name}</div>
-          <div className='card-badge'>
-            <div className='badge'>
-              <i className='fa-solid fa-star checked'></i> {product.rating}
+        <Link to={`/product/${product._id}`}>
+          <div className='card-head'>
+            <div className='card-title h5'>{product.name}</div>
+            <div className='card-badge'>
+              <div className='badge'>
+                <i className='fa-solid fa-star checked'></i> {product.rating}
+              </div>
             </div>
+            <div className='card-subtitle h4'>
+              <ins>Rs. {product.price - product.discount_amt}</ins>{" "}
+              <del>Rs. {product.price}</del>
+            </div>
+            <div className='offer'>{product.discount}% off</div>
           </div>
-          <div className='card-subtitle h4'>
-            <ins>Rs. {product.price - product.discount_amt}</ins>{" "}
-            <del>Rs. {product.price}</del>
-          </div>
-          <div className='offer'>{product.discount} off</div>
-        </div>
+        </Link>
         <div className='card-option'>
           <button
             className='btn'
             onClick={() => {
-              cartDispatch({ type: "ADD_TO_CART", payload: product });
+              authState.isLoggedIn
+                ? cartDispatch({ type: "ADD_TO_CART", payload: product })
+                : navigate("/login");
             }}>
             Add to Cart
           </button>
           <button
             className='btn'
             onClick={() => {
-              wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: product });
+              authState.isLoggedIn
+                ? wishlistDispatch({
+                    type: "ADD_TO_WISHLIST",
+                    payload: product,
+                  })
+                : navigate("/login");
             }}>
             Move to WishList
           </button>
@@ -42,4 +56,5 @@ export default function ProductCard({ product }) {
       </div>
     </div>
   );
-}
+};
+export default ProductCard;

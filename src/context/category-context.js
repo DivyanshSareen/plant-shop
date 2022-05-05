@@ -1,8 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const CategoryContext = createContext();
 
-export function CategoryProvider({ children }) {
+const CategoryProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
 
   async function getCategories() {
@@ -10,12 +12,12 @@ export function CategoryProvider({ children }) {
     try {
       response = await axios.get("/api/categories");
     } catch (error) {
-      console.log(error);
+      navigate("/error");
     } finally {
       setCategories(response.data.categories);
     }
   }
-
+  /* eslint-disable */
   useEffect(() => {
     getCategories();
   }, []);
@@ -30,8 +32,10 @@ export function CategoryProvider({ children }) {
       {children}
     </CategoryContext.Provider>
   );
-}
+};
 
-export function useCategory() {
+const useCategory = () => {
   return useContext(CategoryContext);
-}
+};
+
+export { CategoryProvider, useCategory };

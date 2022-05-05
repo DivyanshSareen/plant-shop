@@ -1,7 +1,7 @@
 import LoginForm from "../components/LoginForm";
 import "../styles/login.css";
 
-export default function LoginPage() {
+const LoginPage = () => {
   return (
     <>
       <section className='login-area'>
@@ -9,4 +9,5 @@ export default function LoginPage() {
       </section>
     </>
   );
-}
+};
+export default LoginPage;

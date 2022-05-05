@@ -1,7 +1,7 @@
 import SignupForm from "../components/SignupForm";
 import "../styles/login.css";
 
-export default function SignupPage() {
+const SignupPage = () => {
   return (
     <>
       <section className='login-area'>
@@ -9,4 +9,5 @@ export default function SignupPage() {
       </section>
     </>
   );
-}
+};
+export default SignupPage;
