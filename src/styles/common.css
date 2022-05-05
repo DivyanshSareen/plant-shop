@@ -78,3 +78,23 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+
+.not-found-page{
+    height: 10rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.server-error-page{
+    height: 10rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+}
