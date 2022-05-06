@@ -7,7 +7,7 @@ const SortFilter = ({ productDispatch }) => {
           id='low-to-high'
           name='sort_order'
           onChange={() => {
-            productDispatch({ type: "SORT_LOW_TO_HIGH" });
+            productDispatch({ type: "UPDATE_SORT", payload: true });
           }}></input>
         <label htmlFor='low-to-high'>Price- Low to High</label>
       </div>
@@ -17,7 +17,7 @@ const SortFilter = ({ productDispatch }) => {
           id='high-to-low'
           name='sort_order'
           onChange={() => {
-            productDispatch({ type: "SORT_HIGH_TO_LOW" });
+            productDispatch({ type: "UPDATE_SORT", payload: false });
           }}></input>
         <label htmlFor='high-to-low'>Price- High to Low</label>
       </div>

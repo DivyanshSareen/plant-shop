@@ -1,7 +1,6 @@
 export function CartReducer(state, action) {
   switch (action.type) {
     case "ADD_TO_CART":
-      console.log(state.cart.includes(action.payload));
       if (state.cart.find((e) => e._id === action.payload._id) !== undefined) {
         return {
           ...state,

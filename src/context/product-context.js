@@ -23,6 +23,7 @@ const rating = [
   { stars: 1, isChecked: true },
 ];
 const range = 500; // max price of products
+const sortOrder = true; // true for low to high and false for high to low
 
 const ProductProvider = ({ children }) => {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ const ProductProvider = ({ children }) => {
     categories,
     rating,
     range,
+    sortOrder,
   });
 
   // API call to GET products
@@ -59,7 +61,12 @@ const ProductProvider = ({ children }) => {
   // updates the filteredProducts whenever a filter state changes
   useEffect(() => {
     productDispatch({ type: "APPLY_FILTERS" });
-  }, [productState.categories, productState.rating, productState.range]);
+  }, [
+    productState.categories,
+    productState.rating,
+    productState.sortOrder,
+    productState.range,
+  ]);
 
   return (
     <ProductContext.Provider value={{ productState, productDispatch }}>
