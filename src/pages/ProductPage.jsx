@@ -18,8 +18,6 @@ const ProductPage = () => {
         .then((r) => setProduct(r.data.product));
     } catch (e) {
       navigate("/error");
-    } finally {
-      console.log(product);
     }
   };
   /* eslint-disable */
