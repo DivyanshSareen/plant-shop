@@ -1,8 +1,7 @@
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import { useAuth } from "../../context/auth-context";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const { authState } = useAuth();
