@@ -17,6 +17,7 @@ const Nav = () => {
               <i className='fa-solid fa-seedling'></i> PlantShop
             </div>
           </Link>
+          <div></div>
           <div className='nav-list'>
             <div className='nav-item input search'>
               <label htmlFor='search'>

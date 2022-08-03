@@ -1,7 +1,7 @@
 /* hero section */
 .hero {
     height: 24rem;
-    background-image: url("https://images.pexels.com/photos/113335/pexels-photo-113335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("../assets/hero.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
@@ -12,12 +12,12 @@
 }
 
 .hero-title {
-    color: var(--primary-100);
+    color: var(--secondary);
     padding-left: 1rem;
 }
 
 .hero-subtitle {
-    color: var(--background-grey);
+    color: var(--white);
     padding-left: 1rem;
 }
 
