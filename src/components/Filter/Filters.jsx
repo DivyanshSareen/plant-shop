@@ -14,7 +14,7 @@ const Filters = () => {
       <div className='filter'>
         <div className='filter-and-clear'>
           <div>Filters</div>
-          <div>
+          <div className='clear'>
             <u
               onClick={() => {
                 productDispatch({ type: "RESET_FILTERS" });

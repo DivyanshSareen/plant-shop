@@ -1,17 +1,12 @@
 import WishlistCard from "../Cards/WishlistCard";
-import { useWishlist } from "../../context/wishlist-context";
 
-const WishlistGrid = () => {
-  const { wishlistState } = useWishlist();
-
+const WishlistGrid = ({ wishlist }) => {
   return (
-    <main>
-      <div className='wishlist'>
-        {wishlistState.wishlist.map((wish) => (
-          <WishlistCard key={wish._id} wishProduct={wish} />
-        ))}
-      </div>
-    </main>
+    <div className='wishlist'>
+      {wishlist.map((wish) => (
+        <WishlistCard key={wish._id} wishProduct={wish} />
+      ))}
+    </div>
   );
 };
 export default WishlistGrid;

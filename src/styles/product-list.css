@@ -20,15 +20,23 @@
 
 /* filter section */
 .filter{
-    width: 18em;
+    width: 16em;
     padding: 1em;
     box-shadow: var(--list-shadow);
     position: sticky;
+    background: var(--white);
+    border-radius: 0 0 var(--radius-l) 0;
 }
 
 .filter-and-clear{
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
+}
+
+.clear{
+    color: var(--primary);
+    cursor: pointer;
 }
 
 .price > .input-data{
@@ -61,6 +69,11 @@
 .badge > i{
     color: var(--white);
 }
+
 .price-input{
     padding: 0;
+}
+
+.card-img > img{
+    border-radius: var(--radius-s) 0 var(--radius-s) 0;
 }
