@@ -26,4 +26,14 @@ export const categories = [
     categoryName: "indoor",
     image: "cat4.jpeg",
   },
+  {
+    _id: uuid(),
+    categoryName: "bamboo",
+    image: "cat5.webp",
+  },
+  {
+    _id: uuid(),
+    categoryName: "bamboo",
+    image: "cat6.webp",
+  },
 ];
