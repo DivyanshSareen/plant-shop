@@ -33,7 +33,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "bamboo",
+    categoryName: "herb",
     image: "cat6.webp",
   },
 ];
