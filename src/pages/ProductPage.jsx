@@ -58,7 +58,7 @@ const ProductPage = () => {
             onClick={() =>
               authState.isLoggedIn
                 ? wishlistDispatch({
-                    type: "MOVE_TO_WISHLIST",
+                    type: "ADD_TO_WISHLIST",
                     payload: product,
                   })
                 : navigate("/login")
