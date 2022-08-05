@@ -14,6 +14,8 @@ const categories = [
   { name: "palm", isChecked: true },
   { name: "indoor", isChecked: true },
   { name: "fruit", isChecked: true },
+  { name: "bamboo", isChecked: true },
+  { name: "herb", isChecked: true },
 ];
 const rating = [
   // ratings with filter status
