@@ -64,7 +64,7 @@ const BillingDetail = () => {
           <div className='price-value'>Rs. {cartState.bill.total}</div>
           <div className='price-detail'>Discount</div>
           <div className='price-value'>- Rs. {cartState.bill.discount}</div>
-          <div className='price-detail'>Dlivery Charges</div>
+          <div className='price-detail'>Delivery Charges</div>
           <div className='price-value'>Rs. {cartState.bill.deliveryCharge}</div>
         </div>
         <hr />
