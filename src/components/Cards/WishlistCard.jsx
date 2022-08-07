@@ -1,5 +1,6 @@
 import { useWishlist } from "../../context/wishlist-context";
 import { useCart } from "../../context/cart-context";
+import notification from "../Notification/notification";
 
 const WishlistCard = ({ wishProduct }) => {
   const { wishlistDispatch } = useWishlist();
@@ -25,6 +26,7 @@ const WishlistCard = ({ wishProduct }) => {
           <button
             className='btn'
             onClick={() => {
+              notification({ action: "ADD_TO_CART", item: wishProduct });
               cartDispatch({ type: "ADD_TO_CART", payload: wishProduct });
               wishlistDispatch({
                 type: "REMOVE_FROM_WISHLIST",
@@ -35,12 +37,16 @@ const WishlistCard = ({ wishProduct }) => {
           </button>
           <button
             className='btn'
-            onClick={() =>
+            onClick={() => {
+              notification({
+                action: "REMOVE_FROM_WISHLIST",
+                item: wishProduct,
+              });
               wishlistDispatch({
                 type: "REMOVE_FROM_WISHLIST",
                 payload: wishProduct,
-              })
-            }>
+              });
+            }}>
             Remove
           </button>
         </div>

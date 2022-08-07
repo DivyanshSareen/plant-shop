@@ -26,6 +26,7 @@
     position: sticky;
     background: var(--white);
     border-radius: 0 0 var(--radius-l) 0;
+    border: 1px solid var(--primary-100);
 }
 
 .filter-and-clear{
@@ -75,5 +76,5 @@
 }
 
 .card-img > img{
-    border-radius: var(--radius-s) 0 var(--radius-s) 0;
+    border-radius: var(--radius-s) 0 0 var(--radius-s);
 }

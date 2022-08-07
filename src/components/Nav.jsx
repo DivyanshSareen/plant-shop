@@ -45,7 +45,7 @@ const Nav = () => {
             ) : (
               <Link to='./login'>
                 <button className='nav-item btn btn-ghost login-btn'>
-                  <i class='fa-solid fa-arrow-right-to-bracket'></i>
+                  <i className='fa-solid fa-arrow-right-to-bracket'></i>
                   Login
                 </button>
               </Link>
