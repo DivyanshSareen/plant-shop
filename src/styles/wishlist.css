@@ -4,6 +4,12 @@ h4{
     padding: 1em;
 }
 
+.wishlist-head{
+    color: var(--primary);
+    padding: 1em;
+    font-weight: var(--semi-bold);
+}
+
 .wishlist{
     display: grid;
     grid-template-columns: 1fr 1fr ;

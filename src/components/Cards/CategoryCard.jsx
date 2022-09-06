@@ -6,7 +6,7 @@ const CategoryCard = ({ category }) => {
   return (
     <Link to='listing'>
       <div
-        className='card card-overlay'
+        className='category-card card'
         onClick={() => {
           return productDispatch({
             type: "CATEGORY_INIT",
@@ -20,10 +20,6 @@ const CategoryCard = ({ category }) => {
           <img
             src={require(`../../assets/${category.image}`)}
             alt='product-category'></img>
-        </div>
-        <div className='card-badge'>
-          <div className='badge'>new</div>
-          <div className='badge'>sale</div>
         </div>
       </div>
     </Link>

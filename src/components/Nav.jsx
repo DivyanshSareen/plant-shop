@@ -17,16 +17,17 @@ const Nav = () => {
               <i className='fa-solid fa-seedling'></i> PlantShop
             </div>
           </Link>
+          <div></div>
           <div className='nav-list'>
             <div className='nav-item input search'>
-              <label htmlFor='search'>
+              {/* <label htmlFor='search'>
                 <i className='fa-solid fa-magnifying-glass'></i>{" "}
               </label>
               <input
                 className='input-data'
                 type='text'
                 id='search'
-                placeholder='Search Products'></input>
+                placeholder='Search Products'></input> */}
             </div>
             {authState.isLoggedIn ? (
               <Link

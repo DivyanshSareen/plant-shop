@@ -54,6 +54,8 @@ export default function productReducer(state, action) {
           { name: "palm", isChecked: true },
           { name: "indoor", isChecked: true },
           { name: "fruit", isChecked: true },
+          { name: "bamboo", isChecked: true },
+          { name: "herb", isChecked: true },
         ],
         rating: [
           { stars: 4, isChecked: false },

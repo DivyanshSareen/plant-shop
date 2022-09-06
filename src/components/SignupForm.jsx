@@ -9,7 +9,7 @@ const SignupForm = () => {
   const [loading, setLoading] = useState("finished");
 
   const [signupForm, setSignupForm] = useState({
-    email: "bancobanco@gmail.com",
+    email: "newbanco@gmail.com",
     password: "bancobanco",
   });
 

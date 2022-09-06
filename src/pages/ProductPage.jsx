@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useWishlist } from "../context/wishlist-context";
 import { useCart } from "../context/cart-context";
 import { useAuth } from "../context/auth-context";
+import notification from "../components/Notification/notification";
 
 const ProductPage = () => {
   const { authState } = useAuth();
@@ -47,22 +48,27 @@ const ProductPage = () => {
           <button
             className='btn'
             onClick={() => {
-              authState.isLoggedIn
-                ? cartDispatch({ type: "ADD_TO_CART", payload: product })
-                : navigate("/login");
+              if (authState.isLoggedIn) {
+                cartDispatch({ type: "ADD_TO_CART", payload: product });
+                notification({ action: "ADD_TO_CART", item: product });
+              } else navigate("/login");
             }}>
             Add to Cart
           </button>
           <button
             className='btn'
-            onClick={() =>
-              authState.isLoggedIn
-                ? wishlistDispatch({
-                    type: "MOVE_TO_WISHLIST",
-                    payload: product,
-                  })
-                : navigate("/login")
-            }>
+            onClick={() => {
+              if (authState.isLoggedIn) {
+                wishlistDispatch({
+                  type: "ADD_TO_WISHLIST",
+                  payload: product,
+                });
+                notification({
+                  action: "MOVE_TO_WISHLIST",
+                  item: product,
+                });
+              } else navigate("/login");
+            }}>
             Move to Wishlist
           </button>
         </div>
