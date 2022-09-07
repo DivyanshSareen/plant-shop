@@ -9,7 +9,6 @@ const AuthProvider = ({ children }) => {
   const [authState, authDispatch] = useReducer(authReducer, {
     isLoggedIn: token === null ? false : true,
     authToken: token !== null ? token : "",
-    email: "",
   });
   return (
     <authContext.Provider value={{ authState, authDispatch }}>
