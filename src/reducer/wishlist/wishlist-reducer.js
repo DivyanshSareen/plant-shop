@@ -1,9 +1,6 @@
 export default function wishlistReducer(state, action) {
   switch (action.type) {
     case "ADD_TO_WISHLIST":
-      console.log(
-        state.wishlist.some((item) => item._id === action.payload._id)
-      );
       return state.wishlist.some((item) => item._id === action.payload._id) ===
         true
         ? { ...state }
