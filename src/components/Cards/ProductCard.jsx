@@ -24,8 +24,8 @@ const ProductCard = ({ product }) => {
               </div>
             </div>
             <div className='card-subtitle h4'>
-              <ins>Rs. {product.price - product.discount_amt}</ins>{" "}
-              <del>Rs. {product.price}</del>
+              <ins>AUD {product.price - product.discount_amt}</ins>{" "}
+              <del>AUD {product.price}</del>
             </div>
             <div className='offer'>{product.discount}% off</div>
           </div>

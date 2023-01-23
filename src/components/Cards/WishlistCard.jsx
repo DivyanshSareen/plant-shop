@@ -17,8 +17,8 @@ const WishlistCard = ({ wishProduct }) => {
             <i className='fa-solid fa-star checked'></i> {wishProduct.rating}
           </div>
           <div className='card-subtitle h4'>
-            <ins>Rs. {wishProduct.price - wishProduct.discount_amt}</ins>{" "}
-            <del>Rs. {wishProduct.price}</del>
+            <ins>AUD {wishProduct.price - wishProduct.discount_amt}</ins>{" "}
+            <del>AUD {wishProduct.price}</del>
           </div>
           <div className='offer'>{wishProduct.discount}% off</div>
         </div>

@@ -7,6 +7,7 @@ import ProductPage from "./ProductPage";
 import ServerErrorPage from "./ServerErrorPage";
 import SignupPage from "./SignupPage";
 import WishlistPage from "./WishlistPage";
+import PaymentDetailsPage from "./PaymentDetailsPage";
 
 export {
   CartPage,
@@ -18,4 +19,5 @@ export {
   ServerErrorPage,
   SignupPage,
   WishlistPage,
+  PaymentDetailsPage
 };

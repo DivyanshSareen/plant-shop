@@ -14,8 +14,8 @@ const CartCard = ({ cartProduct }) => {
         <div className='card-head'>
           <div className='card-title h5'>{cartProduct.name}</div>
           <div className='card-subtitle h4'>
-            <ins>Rs. {cartProduct.price - cartProduct.discount_amt}</ins>{" "}
-            <del>Rs. {cartProduct.price}</del>
+            <ins>AUD {cartProduct.price - cartProduct.discount_amt}</ins>{" "}
+            <del>AUD {cartProduct.price}</del>
           </div>
           <div className='offer'>{cartProduct.discount}% off</div>
         </div>

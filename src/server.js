@@ -56,6 +56,7 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     routes() {
+      this.passthrough('/https://api.qafinmo.net/v1/**');
       this.namespace = "api";
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
@@ -85,6 +86,7 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+
     },
   });
 }

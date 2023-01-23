@@ -13,6 +13,7 @@ import {
   ProductPage,
   ServerErrorPage,
   NotFoundPage,
+  PaymentDetailsPage,
 } from "./pages/PageIndex";
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='signup' element={<SignupPage />} />
         <Route path='listing' element={<ProductListings />} />
         <Route path='/product/:productId' element={<ProductPage />} />
+        <Route path='details' element={<PaymentDetailsPage />}/>
         <Route path='mock' element={<Mockman />} />
         <Route
           path='cart'
