@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useCart } from "../context/cart-context";
 import axios from "axios";
 import { useEffect, useState } from "react";
