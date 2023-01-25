@@ -10,7 +10,7 @@ async function createFinmoLink(breakdown, totalAmount) {
     amount: totalAmount,
     currency: "AUD",
     country: "AU",
-    redirect_url: "finmo.net",
+    redirect_url: "https://g6x46s.csb.app/",
     amount_breakdown: breakdown,
   });
 
