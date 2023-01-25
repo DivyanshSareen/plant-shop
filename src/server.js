@@ -56,7 +56,7 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     routes() {
-      this.passthrough('/https://api.qafinmo.net/v1/**');
+      this.passthrough('/https://api.qafinmo.net/v1/checkout');
       this.namespace = "api";
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));

@@ -9,10 +9,10 @@ async function createFinmoLink(breakdown, totalAmount) {
     amount: totalAmount,
     currency: "AUD",
     country: "AU",
-    redirect_url: "https://gardenshop.netlify.app",
+    redirect_url: "finmo.net",
     amount_breakdown: breakdown,
   });
-  console.log(data)
+
   let config = {
     method: "post",
     url: `https://api.qafinmo.net/v1/checkout`,
@@ -22,6 +22,7 @@ async function createFinmoLink(breakdown, totalAmount) {
     },
     data: data,
   };
+  console.log(data)
   
   await axios(config)
     .then(function (response) {
